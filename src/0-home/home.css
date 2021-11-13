@@ -1,0 +1,261 @@
+.home-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(#252525, #000);
+}
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}
+.home-text-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 7.5rem;
+    opacity: 0;
+    z-index: 25;
+    animation: fade-home-description 2s ease-in .5s forwards;
+}
+.home-header {
+    color: white;
+    margin-bottom: 1.25rem;
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: .075rem;
+    text-shadow: .35rem .35rem 1rem black;
+}
+.home-description {
+    color: #aaa;
+    font-size: 2rem;
+    letter-spacing: .25rem;
+    margin-bottom: 1rem;
+    text-shadow: .15rem .15rem .5rem black;
+}
+@keyframes fade-home-description {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.home-button {
+    margin-top: 2.5rem;
+    width: 10.25rem;
+    height: 5.25rem;
+    border-radius: 4.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border: none;
+    transition: all .25s ease;
+    z-index: 100;
+    color: #fff;
+    background-color: #000;
+    box-shadow: .35rem .35rem 1rem rgba(0, 0, 0, 0.6);
+}
+.home-button:hover {
+    cursor: pointer;
+    transform: scale(1.075);
+    color: #000;
+    background-color: #fff;
+}
+.floating-coins {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.floating-coins li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 7.5rem;
+	height: 7.5rem;
+	animation: float 20s linear infinite;
+	bottom: -150px;
+    border-radius: 50%;
+    z-index: -1;
+}
+.floating-coins li:nth-child(1) {
+	left: 5%;
+	animation-delay: 7s;
+    animation-duration: 12s;
+    background: url("https://newcoinlister.com/wp-content/uploads/2021/05/crypto-com-coin-price.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(2) {
+	left: 10%;
+	animation-delay: 2s;
+	animation-duration: 12s;
+    background: url("https://s2.coinmarketcap.com/static/img/coins/200x200/1321.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(3) {
+	left: 15%;
+	animation-delay: 12s;
+    animation-duration: 11.5s;
+    background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Ripple-XRP-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(4) {
+    left: 20%;
+	animation-delay: 4.5s;
+	animation-duration: 11s;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT60D0rM-Sv-NXbJP4Ub6PoCWY64LcB_BraT_nzBolOhXMfPnHNtvrrRQjwDGB0cZUmens&usqp=CAU");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(5) {
+    left: 25%;
+	animation-delay: 7s;
+    animation-duration: 11s;
+    background: url("https://cryptologos.cc/logos/the-graph-grt-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(6) {
+    left: 30%;
+	animation-delay: 12s;
+    animation-duration: 9s;
+    background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/512/Binance-Coin-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(7) {
+	left: 35%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+    background: url("https://s2.coinmarketcap.com/static/img/coins/200x200/1975.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(8) {
+	left: 40%;
+	animation-delay: 4.5s;
+	animation-duration: 9s;
+    background: url("https://solana.com/branding/new/exchange/exchange-black.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(9) {
+    left: 45%;
+	animation-delay: 7s;
+    animation-duration: 16s;
+    background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Tether-USDT-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(10) {
+    left: 50%;
+	animation-delay: 1s;
+	animation-duration: 16s;
+    background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(11) {
+	left: 55%;
+    animation-delay: 12s;
+    animation-duration: 16s;
+    background: url("https://icons-for-free.com/iconfiles/png/512/eth+ethcoin+etherium+icon-1320162857971241492.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(12) {
+	left: 60%;
+	animation-delay: 4.5s;
+    animation-duration: 16s;
+    background: url("https://www.pngfind.com/pngs/m/421-4213469_file-ltc-400-litecoin-logo-hd-png-download.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(13) {
+	left: 82%;
+	animation-delay: 7s;
+    animation-duration: 10s;
+    background: url("https://icons-for-free.com/iconfiles/png/512/cryptocurrency+icons+++color+ada-1324448923896463001.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(14) {
+	left: 70%;
+	animation-delay: 0s;
+    animation-duration: 10s;
+    background: url("https://www.centre.io/hubfs/usdc-icon-86074d9d49.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(15) {
+	left: 75%;
+	animation-delay: 12s;
+    animation-duration: 11s;
+    background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/512/Dogecoin-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(16) {
+	left: 80%;
+	animation-delay: 3.5s;
+    animation-duration: 11s;
+    background: url("https://logowik.com/content/uploads/images/avalanche-coin-avax8592.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(17) {
+	left: 85%;
+	animation-delay: 14s;
+    animation-duration: 8s;
+    background: url("https://www.pngall.com/wp-content/uploads/10/Polkadot-Crypto-Logo-PNG-Pic.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.floating-coins li:nth-child(18) {
+	left: 90%;
+	animation-delay: 0s;
+    animation-duration: 14s;
+    background: url("https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@keyframes float {
+	0% {
+		transform: translateY(-1000px) rotate(0deg);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(0) rotate(360deg);
+		opacity: 0;
+	}
+}
