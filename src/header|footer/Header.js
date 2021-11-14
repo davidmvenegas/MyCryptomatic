@@ -1,17 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import "./header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function Header() {
     return (
         <header>
             <div className="header-container">
-                <Link to="/"><h1>Cryptomatic</h1></Link>
-                <ul>
-                    <li><Link exact to="/markets"><h1>Markets</h1></Link></li>
-                    <li><Link to="/favorites"><h1>Favorites</h1></Link></li>
-                    <li><Link to="/tradingBot"><h1>Trading Bot</h1></Link></li>
-                    <li><Link to="/news"><h1>News</h1></Link></li>
-                    <li><Link to="/account"><h1>Account</h1></Link></li>
+                <NavLink exact to="/"><img className="header-logo-img" src="./link-icon.png" alt="cryptomatic_logo"/><h1 className="header-logo">Cryptomatic</h1></NavLink>
+                <ul className="header-menu">
+                    <li className="header-item"><NavLink to="/markets" activeClassName="active" className="header-link"><h1>Markets</h1></NavLink></li>
+                    <li className="header-item"><NavLink to="/favorites" activeClassName="active" className="header-link"><h1>Favorites</h1></NavLink></li>
+                    <li className="header-item"><NavLink to="/tradingBot" activeClassName="active" className="header-link"><h1>Trading Bot</h1></NavLink></li>
+                    <li className="header-item"><NavLink to="/news" activeClassName="active" className="header-link"><h1>News</h1></NavLink></li>
+                    <li className="account-btn"><NavLink to="/account" activeClassName="active" className="header-link"><FontAwesomeIcon icon={faUser}/></NavLink></li>
                 </ul>
             </div>
         </header>

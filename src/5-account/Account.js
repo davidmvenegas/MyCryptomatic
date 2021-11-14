@@ -1,4 +1,5 @@
 import React from 'react'
+import './account.css';
 
 function Account() {
     return (

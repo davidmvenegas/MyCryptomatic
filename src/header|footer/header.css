@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+header {
+    background-color: #111;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-container {
+    height: 10rem;
+    width: 100%;
+    max-width: 150rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 17.5rem;
+    margin-top: .5rem;
+}
+.header-logo {
+    position: absolute;
+    left: 15rem;
+    top: 2.8rem;
+    color: #ba0c0c;
+    font-family: 'Righteous';
+    font-size: 3.5rem;
+    letter-spacing: .1rem;
+    text-shadow: .25rem .25rem .25rem black;
+    cursor: pointer;
+}
+.header-logo-img {
+    position: absolute;
+    left: 10.25rem;
+    top: 3rem;
+    width: 4rem;
+    height: 4rem;
+    padding-right: 1rem;
+}
+.header-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin-right: 2rem;
+}
+.header-link {
+    color: #fff;
+    text-decoration: none;
+}
+.header-item {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin: 0 2.5rem;
+    line-height: 4rem;
+}
+.header-item::after {
+    content: "";
+    display: block;
+    height: .3rem;
+    width: 0;
+    background-color: transparent;
+    transition: all .7s ease;
+}
+.header-item:hover::after {
+    width: 100%;
+    background-color: #d82020;
+}
+.header-item .active {
+    color: #d82020;
+}
+.account-btn {
+    position: absolute;
+    right: 15rem;
+    font-size: 3rem;
+    top: 3rem;
+}
+.account-btn .active {
+    color: #d82020;
+}
