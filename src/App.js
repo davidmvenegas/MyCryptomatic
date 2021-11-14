@@ -1,14 +1,12 @@
 import React from "react";
-// import Header from "./0-home/Header";
-import Home from "./0-home/Home";
-// import Footer from "./0-home/Footer";
+// import Home from "./0-home/Home";
+import Markets from "./1-markets/Markets";
 
 function App() {
   return (
     <div>
-      {/* <Header /> */}
-      <Home />
-      {/* <Footer /> */}
+      {/* <Home /> */}
+      <Markets />
     </div>
   );
 }

@@ -134,8 +134,8 @@
 }
 .floating-coins li:nth-child(6) {
     left: 30%;
-	animation-delay: 12s;
-    animation-duration: 9s;
+	animation-delay: 10s;
+    animation-duration: 10s;
     background: url("https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/512/Binance-Coin-icon.png");
     background-position: center;
     background-repeat: no-repeat;
