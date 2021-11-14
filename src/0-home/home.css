@@ -50,13 +50,14 @@
 }
 .home-button {
     margin-top: 2.5rem;
-    width: 10.25rem;
+    width: 14.25rem;
     height: 5.25rem;
     border-radius: 4.5rem;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 600;
     border: none;
     transition: all .25s ease;
+    text-transform: uppercase;
     z-index: 100;
     color: #fff;
     background-color: #000;
