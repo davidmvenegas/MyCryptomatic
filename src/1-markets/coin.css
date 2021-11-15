@@ -1,0 +1,44 @@
+.coin-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coin-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 6rem;
+    width: 80vw;
+    min-width: 30rem;
+    border-bottom: .1rem solid #d7d7d7;
+    margin-bottom: 1rem;
+}
+/* .coin-img {
+    height: 3rem;
+    width: 3rem;
+}
+.coin-name {
+
+}
+.coin-symbol {
+
+}
+.coin-chart {
+
+}
+.coin-price {
+
+}
+.coin-change {
+
+}
+.coin-mCap {
+
+}
+.coin-volume {
+
+}
+.coin-supply {
+
+} */

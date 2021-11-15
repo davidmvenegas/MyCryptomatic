@@ -1,10 +1,26 @@
 import React from 'react';
 import './markets.css';
+import Coin from './Coin'
 
 function Markets() {
     return (
         <div>
-            <h1 className="markets-text">MARKETS</h1>
+            <div className="markets-container">
+                <form>
+                    <input className="markets-search-form" type="text" placeholder="Search for Crypto..." />
+                </form>
+                <div className="coins-container">
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                    <Coin/>
+                </div>
+            </div>
         </div>
     )
 }

@@ -11,3 +11,6 @@ html {
 body {
   background-color: aliceblue;
 }
+::-webkit-scrollbar { 
+  display: none;
+}

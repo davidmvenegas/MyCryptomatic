@@ -1,3 +1,30 @@
-.markets-text {
-    text-align: center;
+.markets-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.markets-search-form {
+    margin-top: 2.5rem;
+    width: 40rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: .25rem .25rem 1rem rgba(0, 0, 0, 0.6);
+    padding: 0 2rem;
+    font-size: 2rem;
+    background-color: #111;
+    color: #fff;
+}
+.coins-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    border: .1rem solid #222;
+    border-radius: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding: 2.5rem 0;
 }
