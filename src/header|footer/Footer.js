@@ -22,7 +22,7 @@ function Footer() {
                 </ul>
             </div>
             <div className="footer-bottom">
-                <p className="footer-copyright">Copyright &copy;2021 FlatironSchool. Designed By <span><a target="_blank" href="https://github.com/davidmvenegas" rel="noreferrer">David Venegas</a></span> & <span><a target="_blank" href="https://github.com/Escobar-Luis" rel="noreferrer">Louis Escobar</a></span></p>
+                <p className="footer-copyright">Copyright &copy;2021 FlatironSchool. Designed By <span><a target="_blank" href="https://github.com/davidmvenegas" rel="noreferrer">David Venegas</a></span> & <span><a target="_blank" href="https://github.com/Escobar-Luis" rel="noreferrer">Luis Escobar</a></span></p>
             </div>
         </footer>
     )
