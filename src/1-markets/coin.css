@@ -29,9 +29,9 @@
 /* .coin-name {
 
 } */
-/* .coin-symbol {
-
-} */
+.coin-symbol {
+    text-transform: uppercase;
+}
 /* .coin-chart {
 
 } */

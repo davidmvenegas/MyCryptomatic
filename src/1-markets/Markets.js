@@ -4,8 +4,11 @@ import Coin from './Coin'
 
 function Markets() {
     const [coins, setCoins]= useState([])
+    const[selectedCurrency,setSelectedCurrency]=useState('usd')
+    const [sign, setSign] = useState('$')
+
     useEffect(() => {
-        fetch("https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per_page=100&order=market_cap_desc", {
+        fetch(`https://coingecko.p.rapidapi.com/coins/markets?vs_currency=${selectedCurrency}&page=1&per_page=500&order=market_cap_desc`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "coingecko.p.rapidapi.com",
@@ -17,9 +20,12 @@ function Markets() {
     .catch(err => {
         console.error(err);
     });  
-    }, [])
-    console.log(coins)
+    }, [handleClick])
 
+    function handleClick (event) {
+        setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
+        setSign(event.target.value)
+    }
     return (
         <div>
             <div className="markets-container">
@@ -29,22 +35,22 @@ function Markets() {
                     </form>
                     <h1 className="markets-marketCap">Market Cap: <span className="markets-marketCap-amount">$ 3.1</span><span className="markets-marketCap-T">T</span></h1>
                     <h1 className="markets-totalVolume">Total Volume: <span className="markets-totalVolume-amount">128.4</span><span className="markets-totalVolume-B">B</span></h1>
-                    <select className="currency-type-selector" name="currency-type">
-                        <option className="currency-type-item" value="AUD">AUD</option>
-                        <option className="currency-type-item" value="CAD">CAD</option>
-                        <option className="currency-type-item" value="CHF">CHF</option>
-                        <option className="currency-type-item" value="CNY">CNY</option>
-                        <option className="currency-type-item" value="EUR">EUR</option>
-                        <option className="currency-type-item" value="GBP">GBP</option>
-                        <option className="currency-type-item" value="HKD">HKD</option>
-                        <option className="currency-type-item" value="JPY">JPY</option>
-                        <option className="currency-type-item" value="NZD">NZD</option>
-                        <option className="currency-type-item" value="USD" selected>USD</option>
+                    <select onChange={handleClick} className="currency-type-selector" >
+                        <option className="currency-type-item" label="AUD" value='A$'>AUD</option>
+                        <option className="currency-type-item" label="CAD" value='C$'>CAD</option>
+                        <option className="currency-type-item" label="CHF" value='CHF'>CHF</option>
+                        <option className="currency-type-item" label="CNY" value='元'>CNY</option>
+                        <option className="currency-type-item" label="EUR" value='€'>EUR</option>
+                        <option className="currency-type-item" label="GBP" value='£'>GBP</option>
+                        <option className="currency-type-item" label="HKD" value='HK$'>HKD</option>
+                        <option className="currency-type-item" label="JPY" value='¥'>JPY</option>
+                        <option className="currency-type-item" label="NZD" value='NZ$'>NZD</option>
+                        <option className="currency-type-item" label="USD" value='$' selected>USD</option>
                     </select>
                 </div>
                 <div className="coins-container">
                 {coins.map((coin) => {
-                        return <Coin key={coin.id} coin={coin}/>
+                        return <Coin sign={sign} key={coin.id} coin={coin}/>
                     })}
                 </div>
             </div>
