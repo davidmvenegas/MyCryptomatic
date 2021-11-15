@@ -97,6 +97,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: #151515;
+    min-height: 32.5vh;
     width: 80vw;
     border-radius: 0 0 1rem 1rem;
     margin-bottom: 2.5rem;

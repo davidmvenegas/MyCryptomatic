@@ -1,0 +1,9 @@
+.track-container {
+    min-height: 55vh;
+    background-color: yellowgreen;
+}
+.track {
+    text-align: center;
+    padding-top: 20rem;
+    font-size: 5rem;
+}

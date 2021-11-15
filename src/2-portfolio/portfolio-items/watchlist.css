@@ -1,4 +1,9 @@
-.watchTHIS {
-    height: 80vh;
+.watchlist-container {
+    min-height: 55vh;
     background-color: hotpink;
+}
+.watchlist {
+    text-align: center;
+    padding-top: 20rem;
+    font-size: 5rem;
 }

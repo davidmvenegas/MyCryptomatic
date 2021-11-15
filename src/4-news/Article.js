@@ -1,24 +1,26 @@
 import React from 'react'
 import './article.css'
+import moment from 'moment';
+moment().format();
 
-function Article() {
+function Article({art}) {
     return (
         <div>
             <div className="article-container">
                 <div className="article">
                     <div className="article-text">
                         <div className="article-text-box-1">
-                            <h1 className="article-title">ARTICLE_TITLE</h1>
+                            <h1 className="article-title">{art.title}</h1>
                         </div>
                         <div className="article-text-box-2">
-                            <p className="news-source">NEWS_SOURCE</p>
+                        <a className="news-source" href={art.url}>{art.url.split('/')[2]}</a>
                             <span className="article-bullet">&bull;</span>
-                            <p className="article-time">ARTICLE_TIME</p>
+                            <p className="article-time">{moment(art.publishedAt).fromNow()}</p>
                         </div>
-                            <p className="article-decription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis, non!</p>
+                            <p className="article-decription">{art.description}</p>
                     </div>
                     <div className="article-image-container">
-                        <img className="article-image" src="https://image.cnbcfm.com/api/v1/image/106962967-1634709558798-gettyimages-1235570383-porzycki-cryptocu210928_npbUe.jpeg?v=1635185551&w=929&h=523" alt="article-pic" />
+                        <img className="article-image" src={art.urlToImage} alt="article-pic" />
                     </div>
                 </div>
             </div>

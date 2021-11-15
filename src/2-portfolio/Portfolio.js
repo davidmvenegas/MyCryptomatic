@@ -10,8 +10,8 @@ function Portfolio() {
         <div>
             <PortfolioHeader/>
             <Routes>
-                <Route path="/portfolio/watchlist" element={<Watchlist/>} />
-                <Route path="/portfolio/track" element={<Track/>} />
+                <Route path="/watchlist" element={<Watchlist/>} />
+                <Route path="/track" element={<Track/>} />
             </Routes>
         </div>
     )
