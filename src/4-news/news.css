@@ -1,6 +1,7 @@
-.news-text {
-    text-align: center;
-    margin-top: 25vh;
-    font-size: 5rem;
-    height: 35vh;
+.news-container {
+    padding-top: 3.5rem;
+    min-height: 52.5vh;
+    width: 100vw;
+    background-color: #ddd;
+    padding-bottom: 3.5rem;
 }

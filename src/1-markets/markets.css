@@ -1,4 +1,6 @@
 .markets-container {
+    min-height: 60vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,12 +8,14 @@
     background-color: #333;
 }
 .markets-top-container {
+    position: absolute;
+    top: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 80vw;
     margin-top: 3.5rem;
-    padding: 2.5rem 0;
+    padding: 3.5rem 0;
     background-color: #151515;
     border-radius: 1rem 1rem 0 0;
     border: none;
@@ -87,6 +91,7 @@
     background-color: rgba(0, 0, 0, 0.8); */
 }
 .coins-container {
+    margin-top: 15.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
