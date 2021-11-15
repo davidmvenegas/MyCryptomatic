@@ -11,6 +11,19 @@ function Coin({ coin, sign }) {
         setFav(!fav)
     }
 
+    function currencyParser (labelValue) {
+        return Math.abs(Number(labelValue)) >= 1.0e+12
+        ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + " T"
+        :
+        Math.abs(Number(labelValue)) >= 1.0e+9 ?
+        (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + " B"
+        :
+        Math.abs(Number(labelValue)) >= 1.0e+6 ?
+        (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + " M"
+        : Math.abs(Number(labelValue)) >= 1.0e+3 ?
+        (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + " K"
+        : Math.abs(Number(labelValue))
+    }
     return (
         <div>
             <div className="coin-container">
@@ -23,9 +36,9 @@ function Coin({ coin, sign }) {
                     <p className="coin-chart"></p>
                     <p className="coin-price">{sign} {coin.current_price.toLocaleString()}</p>
                     <p className="coin-change">{coin.price_change_percentage_24h}</p>
-                    <p className="coin-mCap">{coin.market_cap}</p>
-                    <p className="coin-volume">{coin.total_volume}</p>
-                    <p className="coin-supply">{coin.total_supply}</p>
+                    <p className="coin-mCap">{currencyParser(coin.market_cap)}</p>
+                    <p className="coin-volume">{currencyParser(coin.total_volume)}</p>
+                    <p className="coin-supply">{currencyParser(coin.total_supply)}</p>
                 </div>
             </div>
         </div>

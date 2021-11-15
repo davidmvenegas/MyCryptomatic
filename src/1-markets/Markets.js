@@ -3,8 +3,8 @@ import './markets.css';
 import Coin from './Coin'
 
 function Markets() {
-    const [coins, setCoins]= useState([])
-    const[selectedCurrency,setSelectedCurrency]=useState('usd')
+    const [coins, setCoins] = useState([])
+    const[selectedCurrency, setSelectedCurrency] = useState('usd')
     const [sign, setSign] = useState('$')
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function Markets() {
         }
     })
     .then(r => r.json())
-    .then((data) =>setCoins(data))
+    .then((data) => setCoins(data))
     .catch(err => {
         console.error(err);
     });
@@ -27,6 +27,7 @@ function Markets() {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
         setSign(event.target.value)
     }
+    
     return (
         <div>
             <div className="markets-container">
