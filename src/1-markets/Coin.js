@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
-function Coin() {
+function Coin({ coin }) {
     const [fav, setFav] = useState(false)
 
     const toggleFavorited = () => {

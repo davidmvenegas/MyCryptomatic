@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './markets.css';
 import Coin from './Coin'
 
 function Markets() {
+    const [coins, setCoins]= useState([])
+    useEffect(() => {
+        fetch("https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per_page=100&order=market_cap_desc", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "coingecko.p.rapidapi.com",
+            "x-rapidapi-key": "572fa8d9b1mshf9f7a919d0cfd95p1486e7jsnc7ad3408ac61"
+        }
+    })
+    .then(r => r.json())
+    .then((data) =>setCoins(data))
+    .catch(err => {
+        console.error(err);
+    });  
+    }, [])
+    console.log(coins)
+
     return (
         <div>
             <div className="markets-container">
@@ -26,15 +43,9 @@ function Markets() {
                     </select>
                 </div>
                 <div className="coins-container">
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
-                    <Coin/>
+                {coins.map((coin) => {
+                        return <Coin key={coin.id} coin={coin}/>
+                    })}
                 </div>
             </div>
         </div>
