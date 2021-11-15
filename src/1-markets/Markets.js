@@ -19,7 +19,8 @@ function Markets() {
     .then((data) =>setCoins(data))
     .catch(err => {
         console.error(err);
-    });  
+    });
+    // eslint-disable-next-line
     }, [handleClick])
 
     function handleClick (event) {
