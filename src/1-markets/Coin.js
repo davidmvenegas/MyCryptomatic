@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
-function Coin({ coin }) {
+function Coin({ coin, sign }) {
     const [fav, setFav] = useState(false)
 
     const toggleFavorited = () => {
@@ -16,16 +16,16 @@ function Coin({ coin }) {
             <div className="coin-container">
                 <div className="coin-data">
                     {fav ? <FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={solidStar}/> : <FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={regularStar}/>}
-                    <p className="coin-rank">1</p>
-                    <img src={""} alt="coin-img" />
-                    <h1 className="coin-name">COIN_NAME</h1>
-                    <p className="coin-symbol">COIN_SYMBOL</p>
-                    <p className="coin-chart">COIN_CHART</p>
-                    <p className="coin-price">COIN_PRICE</p>
-                    <p className="coin-change">COIN_CHANGE</p>
-                    <p className="coin-mCap">COIN_MCAP</p>
-                    <p className="coin-volume">COIN_VOLUME</p>
-                    <p className="coin-supply">COIN_SUPPLY</p>
+                    <p className="coin-rank">{coin.market_cap_rank}</p>
+                    <img className="coin-img" src={coin.image} alt="coin-img"/>
+                    <h1 className="coin-name">{coin.name}</h1>
+                    <p className="coin-symbol">{coin.symbol}</p>
+                    <p className="coin-chart"></p>
+                    <p className="coin-price">{sign} {coin.current_price.toLocaleString()}</p>
+                    <p className="coin-change">{coin.price_change_percentage_24h}</p>
+                    <p className="coin-mCap">{coin.market_cap}</p>
+                    <p className="coin-volume">{coin.total_volume}</p>
+                    <p className="coin-supply">{coin.total_supply}</p>
                 </div>
             </div>
         </div>
