@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./header|footer/Header"
 import Home from "./0-home/Home";
 import Markets from "./1-markets/Markets";
-import Favorites from "./2-favorites/Favorites"
+import Portfolio from "./2-portfolio/Portfolio"
 import TradingBot from "./3-tradingBot/TradingBot"
 import News from "./4-news/News"
 import Account from "./5-account/Account"
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>} />
             <Route path="/markets" element={<Markets/>} />
-            <Route path="/favorites" element={<Favorites/>} />
+            <Route path="/portfolio/*" element={<Portfolio/>} />
             <Route path="/tradingBot" element={<TradingBot/>} />
             <Route path="/news" element={<News/>} />
             <Route path="/account" element={<Account/>} />
