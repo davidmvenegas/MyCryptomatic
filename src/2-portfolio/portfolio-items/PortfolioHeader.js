@@ -7,7 +7,7 @@ function PortfolioHeader() {
         <div>
             <div className="portfolio-main-buttons">
                 <NavLink to="/portfolio/watchlist"><button className="portfolio-watchlist-button">Watchlist</button></NavLink> 
-                <NavLink to="/track"><button className="portfolio-track-button">Track</button></NavLink> 
+                <NavLink to="/portfolio/track"><button className="portfolio-track-button">Track</button></NavLink> 
             </div>
         </div>
     )

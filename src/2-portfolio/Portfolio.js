@@ -10,7 +10,7 @@ function Portfolio() {
         <div>
             <PortfolioHeader/>
             <Routes>
-                <Route exact path="/portfolio/watchlist" element={<Watchlist/>} />
+                <Route path="/portfolio/watchlist" element={<Watchlist/>} />
                 <Route path="/portfolio/track" element={<Track/>} />
             </Routes>
         </div>
