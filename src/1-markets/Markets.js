@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './markets.css';
 import Coin from './Coin'
 
-function Markets() {
+function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     const [coins, setCoins] = useState([])
     const[selectedCurrency, setSelectedCurrency] = useState('usd')
     const [sign, setSign] = useState('$')
@@ -72,7 +72,8 @@ function Markets() {
                         </tr>
                     </table>
                     {visibleCoins.map((coin) => {
-                        return <Coin sign={sign} key={coin.id} coin={coin}/>
+                        //I am giving each coin a favorite key of false
+                        return <Coin watchlist={watchlist} sign={sign} key={coin.id} coin={coin} onWatchlist={onWatchlist} onDeleteWatchlist={onDeleteWatchlist}/>
                     })}
                 </div>
             </div>

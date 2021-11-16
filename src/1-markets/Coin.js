@@ -4,12 +4,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
-function Coin({ coin, sign }) {
+function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
+    //give coin key of favorite and value depending on state
     const [fav, setFav] = useState(false)
+    coin.favorite=[fav]
+
 
     const toggleFavorited = () => {
-        setFav(!fav)
+        //if coin is already in our json server and the coins favortied state was already true
+        if (fav===true) {
+            console.log('delete from db')
+            setFav(!fav)
+            return (
+                fetch(`http://localhost:3000/cryptos/${coin.id}`, {
+                    method: "DELETE",
+                })
+                .then(r=>r.json())
+                .then(() => 
+                onDeleteWatchlist(coin))
+        )}
+        else if (fav===false) {
+            console.log('new to db')
+            setFav(!fav)
+            return (
+            fetch('http://localhost:3000/cryptos', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(coin)
+            })
+            .then(r=>r.json())
+            .then((newCoin) => {
+                onWatchlist(newCoin)
+        }))
     }
+}
 
     function currencyParser (labelValue) {
         return Math.abs(Number(labelValue)) >= 1.0e+12
