@@ -15,12 +15,12 @@
     border: .15rem solid #aaa;
     border-radius: .5rem;
     padding: 1.5rem;
-    background-color: #bbb;
+    background-color: #ddd;
     box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.4);
     transition: all .35s ease;
 }
 .article:hover {
-    transform: scale(1.025);
+    transform: scale(1.0185);
 }
 .article-text {
     padding-top: 1rem;

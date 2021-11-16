@@ -1,8 +1,13 @@
 .watchlist-container {
-    min-height: 55vh;
-    background-color: hotpink;
+    min-height: 52.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .watchlist {
+    margin: 2rem 0;
+    background-color: hotpink;
+    width: 80vw;
     text-align: center;
     padding-top: 20rem;
     font-size: 5rem;
