@@ -6,7 +6,7 @@
 }
 .watchlist {
     margin: 3.5rem 0;
-    background: linear-gradient(0deg, rgba(25,25,25,0.05) 25%, rgba(25,25,25,0.1) 50%, rgba(25,25,25,0.3) 75%, rgba(25,25,25,1) 100%);
+    background: linear-gradient(0deg, rgba(25,25,25,0.1) 25%, rgba(25,25,25,0.25) 50%, rgba(25,25,25,0.5) 75%, rgba(25,25,25,1) 100%);
     width: 80vw;
     text-align: center;
     border-radius: 1rem;
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    padding: 2.5rem 0 1.75rem;
+    padding: 3rem 0 1.75rem;
     margin-left: -2.5rem;
 }
 .watchlist-top-count-title {
@@ -37,10 +37,10 @@
     font-family: monospace;
     font-weight: 900;
     text-shadow: none;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #d82020;
     line-height: 2.75rem;
-    padding-left: 4.75rem;
+    padding-left: 2.15rem;
     text-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.445);
     -webkit-text-stroke: 1.75px #151515;
     padding-top: .15rem;
@@ -58,15 +58,15 @@
     letter-spacing: -.05rem;
 }
 .watchlist-sort-title {
-    font-size: 2.5rem;
+    font-size: 2.425rem;
     text-shadow: .25rem .25rem .15rem rgba(0, 0, 0, 0.445);
     color: #bbb;
     text-transform: uppercase;
-    margin-left: 2.5rem;
-    margin-right: -2.5rem;
+    margin-left: 3.5rem;
+    margin-right: -3.5rem;
 }
 .watchlist-sort-subContainer {
-    width: 22.5vw;
+    width: 23.5vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -79,18 +79,17 @@
 }
 .watchlist-sort-item {
     font-family: monospace;
-    font-weight: 900;
-    font-size: 1.8rem;
+    font-weight: 500;
+    font-size: 2rem;
     color: #d82020;
     line-height: 3rem;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: none;
-    text-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.445);
-    -webkit-text-stroke: .75px #151515;
+    text-shadow: .1rem .1rem .1rem rgba(0, 0, 0, 0.445);
     border: .1625rem solid #191919;
     border-radius: 1rem;
-    padding: .15rem .5rem;
+    padding: .35rem .75rem;
     width: 7.5rem;
     background-color: rgba(25,25,25,0.5);
     transition: all .5s ease;
@@ -111,7 +110,7 @@
     margin-left: -3.5rem;
 }
 .watchlist-upDownContainer {
-    margin: -1rem 0;
+    margin: -1.75rem 0;
 }
 .watchlist-upDownContainer input {
     margin: 0;
@@ -120,22 +119,23 @@
 }
 .watchlist-upDown-item {
     height: 1rem;
-    font-size: 2.65rem;
-    color: #656565;
-    transition: all .5s ease;
+    font-size: 3.25rem;
+    color: #000;
+    opacity: .275;
+    transition: all .25s ease;
 }
 .watchlist-upDown-item:hover {
-    color: #444;
+    opacity: .425;
     cursor: pointer;
 }
 .watchlist-upDownContainer input:checked + .watchlist-upDown-item {
-    color: #050505;
+    opacity: 1;
 }
 .watchlist-seperator {
-    width: 60vw;
-    height: .25rem;
-    background-color: #111;
-    margin: 0 0 1rem;
+    width: 70vw;
+    height: .35rem;
+    background-color: #000;
+    margin: 1rem 0 1.75rem;
     border-radius: 50%;
 }
 .watchlist-contents {

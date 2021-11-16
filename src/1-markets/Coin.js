@@ -16,7 +16,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
             console.log('delete from db')
             setFav(!fav)
             return (
-                fetch(`http://localhost:3000/cryptos/${coin.id}`, {
+                fetch(`http://localhost:3001/cryptos/${coin.id}`, {
                     method: "DELETE",
                 })
                 .then(r=>r.json())
@@ -27,7 +27,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
             console.log('new to db')
             setFav(!fav)
             return (
-            fetch('http://localhost:3000/cryptos', {
+            fetch('http://localhost:3001/cryptos', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

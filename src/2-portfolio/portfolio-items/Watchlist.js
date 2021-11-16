@@ -17,21 +17,21 @@ function Watchlist() {
                             <h2 className="watchlist-sort-title">Sort By:</h2>
                             <form className="watchlist-sort-subContainer">
                                 <div className="watchlist-filter">
-                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-name" defaultChecked />
-                                    <label className="watchlist-sort-item" htmlFor="sort-watchlist-name">Name</label>
-                                </div>
-                                <div className="watchlist-filter">
-                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-rank" />
+                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-rank" defaultChecked />
                                     <label className="watchlist-sort-item" htmlFor="sort-watchlist-rank"><span>#</span>Rank</label>
                                 </div>
                                 <div className="watchlist-filter">
                                     <input type="radio" name="sort-watchlist" id="sort-watchlist-change" />
                                     <label className="watchlist-sort-item" htmlFor="sort-watchlist-change"><span>%</span>Change</label>
                                 </div>
+                                <div className="watchlist-filter">
+                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-name" />
+                                    <label className="watchlist-sort-item" htmlFor="sort-watchlist-name">Name</label>
+                                </div>
                             </form>
                             <form className="watchlist-upDown">
                                 <div className="watchlist-upDownContainer">
-                                    <input type="radio" name="upDown" id="up-change" />
+                                    <input type="radio" name="upDown" id="up-change" defaultChecked />
                                     <label className="watchlist-upDown-item" htmlFor="up-change"><FontAwesomeIcon icon={faCaretUp}/></label>
                                 </div>
                                 <div className="watchlist-upDownContainer">
