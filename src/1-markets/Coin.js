@@ -7,7 +7,7 @@ import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
     //give coin key of favorite and value depending on state
     const [fav, setFav] = useState(false)
-    coin.favorite=[fav]
+    coin.favorite=fav
 
 
     const toggleFavorited = () => {
