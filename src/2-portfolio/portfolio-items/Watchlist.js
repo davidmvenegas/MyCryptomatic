@@ -1,5 +1,8 @@
 import React from 'react'
 import "./watchlist.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import WatchlistItem from './WatchlistItem'
 
 function Watchlist() {
@@ -24,6 +27,16 @@ function Watchlist() {
                                 <div className="watchlist-filter">
                                     <input type="radio" name="sort-watchlist" id="sort-watchlist-change" />
                                     <label className="watchlist-sort-item" htmlFor="sort-watchlist-change"><span>%</span>Change</label>
+                                </div>
+                            </form>
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-upDownContainer">
+                                    <input type="radio" name="upDown" id="up-change" />
+                                    <label className="watchlist-upDown-item" htmlFor="up-change"><FontAwesomeIcon icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-upDownContainer">
+                                    <input type="radio" name="upDown" id="down-change" />
+                                    <label className="watchlist-upDown-item" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form>
                         </div>
