@@ -1,0 +1,85 @@
+.watchlist-item-container {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watchlist-item {
+    border: .25rem solid #181818;
+    border-radius: 1rem;
+    padding: 1.35rem;
+    width: 52.5vw;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.watchlist-rank {
+    margin-left: 3.25rem;
+    margin-right: -3.25rem;
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #687588;
+}
+.watchlist-image {
+    height: 3.25rem;
+    width: 3.25rem;
+    margin-top: .15rem;
+    margin-bottom: -.15rem;
+    margin-left: -2.25rem;
+    margin-right: 2.25rem;
+}
+.watchlist-name-container {
+    margin-top: .25rem;
+    margin-bottom: -.25rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: -10.75rem;
+    margin-right: 10.75rem;
+}
+.watchlist-name {
+    color: #fff;
+    line-height: 2.15rem;
+    font-weight: bolder;
+    font-size: 2.25rem;
+    text-transform: capitalize;
+}
+.watchlist-tag {
+    font-size: 1.075rem;
+    margin-left: .1rem;
+    color: #bbb;
+}
+.watchlist-price {
+    color: white;
+    font-size: 2.25rem;
+    margin-left: -10rem;
+    margin-right: 10rem;
+}
+.watchlist-price span {
+    color: #687588;
+    font-size: 2rem;
+    margin-right: .25rem;
+}
+.watchlist-change {
+    color: #ddd;
+    font-size: 2.25rem;
+    margin-left: -7rem;
+    margin-right: 7rem;
+}
+.watchlist-remove {
+    color: #999;
+    font-size: 2.25rem;
+    margin-left: -3.5rem;
+    margin-right: 4rem;
+    transition: transform .15s ease;
+}
+.watchlist-remove:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.watchlist-remove:active {
+    color: red;
+}
