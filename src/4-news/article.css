@@ -1,40 +1,58 @@
 .article-container {
+    font-family:'Segoe UI';
+    padding: 1.5rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 .article {
-    width: 65vw;
-    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    height: 11.5rem;
     border: .15rem solid #aaa;
-    border-radius: 1rem;
+    border-radius: .5rem;
     padding: 1.5rem;
-    background-color: rgb(192, 192, 192);
+    background-color: #bbb;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.4);
+    transition: all .35s ease;
+}
+.article:hover {
+    transform: scale(1.025);
 }
 .article-text {
-    height: 10rem;
+    padding-top: 1rem;
     padding-left: 1.5rem;
     float: left;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    
 }
 .article-text-box-1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: -1rem;
+    margin-top: -1.5rem;
 }
 .article-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #222;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -.025rem;
+    line-height: 2.25rem;
+}
+.article-title:hover {
+    text-decoration: underline;
+}
+.article-title-link {
+    text-decoration: none;
 }
 .article-text-box-2 {
-    margin-top: .5rem;
+    margin-left: .35rem;
+    margin-top: 1.25rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -42,33 +60,39 @@
 .news-source {
     color: gray;
     font-weight: bolder;
+    font-size: 1.2rem;
 }
 .article-bullet {
     color: gray;
     padding: 0 1rem;
+    font-size: 1.2rem;
 }
 .article-time {
     color: gray;
     font-weight: bolder;
+    font-size: 1.2rem;
 }
 .article-image-container {
     float: right;
-    width: 14rem;
-    height: 13rem;
+    min-width: 20rem;
+    min-height: 12.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1.5rem;
     margin-right: .5rem;
+    margin-left: 2.5rem;
 }
 .article-image {
     float: right;
-    max-height: 11rem;
-    max-width: 12.5rem;
-    border-radius: .75rem;
+    max-height: 12rem;
+    max-width: 18rem;
+    border-radius: .5rem;
 }
 .article-decription {
     margin-top: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
+    color: #454545;
+    line-height: 1.85rem;
+    letter-spacing: -.025rem;
 }

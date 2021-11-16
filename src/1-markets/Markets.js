@@ -47,11 +47,22 @@ function Markets() {
                         <option className="currency-type-item" label="HKD" value='HK$'>HKD</option>
                         <option className="currency-type-item" label="JPY" value='¥'>JPY</option>
                         <option className="currency-type-item" label="NZD" value='NZ$'>NZD</option>
-                        <option className="currency-type-item" label="USD" value='$' selected>USD</option>
+                        <option className="currency-type-item" label="USD" value='$' selected >USD</option>
                     </select>
                 </div>
                 <div className="coins-container">
-                {coins.map((coin) => {
+                    <table className="coins-table">
+                        <tr className="coins-table-row">
+                            <td id="coins-table-data-1">Rank</td>
+                            <td id="coins-table-data-2">Name</td>
+                            <td id="coins-table-data-3">Price</td>
+                            <td id="coins-table-data-4">Change</td>
+                            <td id="coins-table-data-5">Mcap</td>
+                            <td id="coins-table-data-6">Volume</td>
+                            <td id="coins-table-data-7">Supply</td>
+                        </tr>
+                    </table>
+                    {coins.map((coin) => {
                         return <Coin sign={sign} key={coin.id} coin={coin}/>
                     })}
                 </div>

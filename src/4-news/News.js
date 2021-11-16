@@ -16,9 +16,11 @@ function News() {
 
     return (
         <div>
-            {news && news.map((n, ind) => {
-                return <Article key={ind} art={n} />
-            })}
+            <div className="news-container">
+                {news && news.map((n, ind) => {
+                    return <Article key={ind} art={n} />
+                })}
+            </div>
         </div>
     )
 }
