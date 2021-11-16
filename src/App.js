@@ -27,7 +27,6 @@ function App() {
     const updatedWatchlist = watchlist.filter((crypto) => crypto.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
-  console.log(watchlist)
   return (
       <BrowserRouter>
         <Header/>

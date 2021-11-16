@@ -6,15 +6,9 @@ import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
 function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
     //give coin key of favorite and value depending on state
-    const [fav, setFav] = useState(false)
-    coin.favorite=fav
-
-
     const toggleFavorited = () => {
-        //if coin is already in our json server and the coins favortied state was already true
-        if (fav===true) {
+        if (watchlist.find((c) => c.id === coin.id===true)) {
             console.log('delete from db')
-            setFav(!fav)
             return (
                 fetch(`http://localhost:3001/cryptos/${coin.id}`, {
                     method: "DELETE",
@@ -22,29 +16,30 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 .then(r=>r.json())
                 .then(() => 
                 onDeleteWatchlist(coin))
-        )}
-        else if (fav===false) {
-            console.log('new to db')
-            setFav(!fav)
-            return (
-            fetch('http://localhost:3001/cryptos', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(coin)
-            })
-            .then(r=>r.json())
-            .then((newCoin) => {
-                onWatchlist(newCoin)
-        }))
-    }
-}
 
-    function currencyParser (labelValue) {
-        return Math.abs(Number(labelValue)) >= 1.0e+12
-        ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
-        :
+                )}else{
+                    console.log('new to db',)
+                    return (
+                        fetch('http://localhost:3000/cryptos', {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(coin)
+                        })
+                        .then(r=>r.json())
+                        .then((newCoin) => {
+                            onWatchlist(newCoin)
+                        }))
+                    }
+                }
+                
+                
+                
+                function currencyParser (labelValue) {
+                    return Math.abs(Number(labelValue)) >= 1.0e+12
+                    ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
+                    :
         Math.abs(Number(labelValue)) >= 1.0e+9 ?
         (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
         :
@@ -57,7 +52,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
     return (
         <div className="coin-data">
             <div id="coin-table-1">
-                {fav ? <FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={solidStar}/> : <FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={regularStar}/>}
+                {watchlist.find((c) => c.id === coin.id) ? <FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={solidStar}/> :<FontAwesomeIcon className="coin-star" onClick={toggleFavorited} icon={regularStar}/>}
             </div>
             <div id="coin-table-2">
                 <p className="coin-rank">{coin.market_cap_rank}</p>
