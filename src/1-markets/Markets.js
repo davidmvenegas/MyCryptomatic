@@ -6,6 +6,7 @@ function Markets() {
     const [coins, setCoins] = useState([])
     const[selectedCurrency, setSelectedCurrency] = useState('usd')
     const [sign, setSign] = useState('$')
+    const[search, setSearch] = useState('')
 
     useEffect(() => {
         fetch(`https://coingecko.p.rapidapi.com/coins/markets?vs_currency=${selectedCurrency}&page=1&per_page=500&order=market_cap_desc`, {
@@ -27,13 +28,21 @@ function Markets() {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
         setSign(event.target.value)
     }
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+    }
+
+    const visibleCoins = coins.filter((coin) => {
+        return coin.name.toLowerCase().includes(search.toLowerCase()) || coin.symbol.toLowerCase().includes(search.toLowerCase())
+    })
     
     return (
         <div>
             <div className="markets-container">
                 <div className="markets-top-container">
                     <form>
-                        <input className="markets-search-form" type="text" placeholder="Search..." />
+                        <input className="markets-search-form" type="text" placeholder="Search..." onChange={handleSearch}/>
                     </form>
                     <h1 className="markets-marketCap">Market Cap: <span className="markets-marketCap-amount">$ 3.1</span><span className="markets-marketCap-T">T</span></h1>
                     <h1 className="markets-totalVolume">Total Volume: <span className="markets-totalVolume-amount">128.4</span><span className="markets-totalVolume-B">B</span></h1>
@@ -62,7 +71,7 @@ function Markets() {
                             <td id="coins-table-data-7">Supply</td>
                         </tr>
                     </table>
-                    {coins.map((coin) => {
+                    {visibleCoins.map((coin) => {
                         return <Coin sign={sign} key={coin.id} coin={coin}/>
                     })}
                 </div>
