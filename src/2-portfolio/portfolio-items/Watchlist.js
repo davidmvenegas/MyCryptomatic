@@ -4,10 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import WatchlistItem from './WatchlistItem'
-
-function Watchlist({watchlist , sortby, setSortby, handleDelete}) {
+function Watchlist({watchlist , sortby, setSortby, handleDelete, up, setUp}) {
 function handleClick (e) {
     setSortby(e.target.value)
+}
+function handleNewClick(e){
+    if (e.target.name === 'up' && up===true) {
+        return setUp(up)
+    }
+    else if (e.target.name === 'down' && up===false) {
+        return setUp(up)
+    }
+    else {
+        return setUp(!up)
+    }
 }
     return (
         <div>
@@ -19,7 +29,7 @@ function handleClick (e) {
                             <h2 className="watchlist-sort-title">Sort By:</h2>
                             <form className="watchlist-sort-subContainer">
                                 <div className="watchlist-filter">
-                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-rank" defaultChecked checked={sortby === 'rank'} value='rank' onClick={handleClick}/>
+                                    <input type="radio" name="sort-watchlist" id="sort-watchlist-rank" checked={sortby === 'rank'} value='rank' onClick={handleClick}/>
                                     <label className="watchlist-sort-item" htmlFor="sort-watchlist-rank"><span>#</span>Rank</label>
                                 </div>
                                 <div className="watchlist-filter">
@@ -33,12 +43,12 @@ function handleClick (e) {
                             </form>
                             <form className="watchlist-upDown">
                                 <div className="watchlist-upDownContainer">
-                                    <input type="radio" name="upDown" id="up-change" defaultChecked />
+                                    <input type="radio" name="up" id="up-change"  onClick={handleNewClick} checked={up ===true}/>
                                     <label className="watchlist-upDown-item" htmlFor="up-change"><FontAwesomeIcon icon={faCaretUp}/></label>
                                 </div>
                                 <div className="watchlist-upDownContainer">
-                                    <input type="radio" name="upDown" id="down-change" />
-                                    <label className="watchlist-upDown-item" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                    <input type="radio" name="down" id="down-change" onClick={handleNewClick} checked={up ===false}/>
+                                    <label className="watchlist-upDown-item" htmlFor="down-change" ><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form>
                         </div>
@@ -54,5 +64,4 @@ function handleClick (e) {
         </div>
     )
 }
-
 export default Watchlist

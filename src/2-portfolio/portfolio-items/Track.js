@@ -9,6 +9,7 @@ function Track() {
 
     function addPurchase(e) {
         e.preventDefault()
+        console.log(cryptoType);
     }
 
     return (
@@ -25,8 +26,8 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select cryptocurrency..." autoComplete="off" ref={cryptoType} />
-                            <datalist id="cryptoTypeList">
+                        <input list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select cryptocurrency..." autoComplete="off" />
+                            <datalist id="cryptoTypeList" ref={cryptoType}>
                                 <option value="Bitcoin">BTC</option>
                                 <option value="Etherium">ETH</option>
                                 <option value="Etherium">ETH</option>

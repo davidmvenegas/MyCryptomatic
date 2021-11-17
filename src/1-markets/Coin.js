@@ -3,24 +3,22 @@ import './coin.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
-
 function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
     //give coin key of favorite and value depending on state
     const toggleFavorited = () => {
         if (watchlist.find((c) => c.id === coin.id===true)) {
             console.log('delete from db')
             return (
-                fetch(`http://localhost:3001/cryptos/${coin.id}`, {
+                fetch(`http://localhost:3000/cryptos/${coin.id}`, {
                     method: "DELETE",
                 })
                 .then(r=>r.json())
                 .then(() => 
                 onDeleteWatchlist(coin))
-
                 )}else{
                     console.log('new to db',)
                     return (
-                        fetch('http://localhost:3001/cryptos', {
+                        fetch('http://localhost:3000/cryptos', {
                             method: "POST",
                             headers: {
                                 'Content-Type': 'application/json'
@@ -37,7 +35,9 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 
                 
                 function currencyParser (labelValue) {
-                    return Math.abs(Number(labelValue)) >= 1.0e+12
+                    return Math.abs(Number(labelValue)) >= 1.0e+15 ?
+                    (Math.abs(Number(labelValue)) / 1.0e+15).toFixed(2) + "Q":
+                    Math.abs(Number(labelValue)) >= 1.0e+12
                     ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
                     :
         Math.abs(Number(labelValue)) >= 1.0e+9 ?
@@ -47,7 +47,8 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
         (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
         : Math.abs(Number(labelValue)) >= 1.0e+3 ?
         (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
-        : Math.abs(Number(labelValue))
+        : Math.abs(Number(labelValue)) < 0.00 ?
+        (Math.abs(Number(labelValue))) + "C" : Math.abs(Number(labelValue))
     }
     return (
         <div className="coin-data">
@@ -65,7 +66,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 <p className="coin-symbol">{coin.symbol}</p>
             </div>
             <div id="coin-table-5">
-                <p className="coin-price"><span className="coin-currency-sign">{sign}</span> {coin.current_price.toLocaleString()}</p>
+                <p className="coin-price" style={(coin.current_price.toString().match(/e/))? {fontSize : '1.5rem'} : null}><span className="coin-currency-sign" style={{fontSize : '2rem'}}>{sign}</span> {coin.current_price.toString().match(/e/) != null ? coin.current_price.toFixed(9): coin.current_price < 0.01 ? coin.current_price.toFixed(6) : coin.current_price > 0 ? coin.current_price.toLocaleString() : coin.current_price}</p>
             </div>
             <div id="coin-table-6">
                 <p className="coin-change" style={(coin.price_change_percentage_24h < 0)?{color:"red"}:{color:"rgb(0, 156, 0)"}}>{coin.price_change_percentage_24h.toFixed(2)}%</p>
@@ -77,10 +78,9 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 <p className="coin-volume"><span className="coin-currency-sign-other">{sign}</span> {currencyParser(coin.total_volume)}</p>
             </div>
             <div id="coin-table-9">
-                <p className="coin-supply">{currencyParser(coin.total_supply)}</p>
+                <p className="coin-supply">{currencyParser(coin.circulating_supply)}</p>
             </div>
         </div>
     )
 }
-
 export default Coin

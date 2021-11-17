@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './markets.css';
 import Coin from './Coin'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     const [coins, setCoins] = useState([])
     const[selectedCurrency, setSelectedCurrency] = useState('usd')
     const [sign, setSign] = useState('$')
     const[search, setSearch] = useState('')
     const[global, setGlobal]= useState([])
+    const[sort, setSort]=useState(null)
     useEffect(() => {
         fetch(`https://coingecko.p.rapidapi.com/coins/markets?vs_currency=${selectedCurrency}&page=1&per_page=500&order=market_cap_desc`, {
         "method": "GET",
@@ -23,7 +26,6 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     });
     // eslint-disable-next-line
 }, [handleClick])
-
 useEffect(() => {
     fetch("https://coinpaprika1.p.rapidapi.com/global", {
 "method": "GET",
@@ -35,20 +37,52 @@ useEffect(() => {
 .then(r => r.json())
 .then((data) => setGlobal(data))    
 }, [])
-
+function handleSort (e) {
+    console.log(e.target.name)
+    console.log(sort)
+    setSort(e.target.name)
+}
     function handleClick (event) {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
         setSign(event.target.value)
     }
-
     function handleSearch(e) {
         setSearch(e.target.value)
     }
-
     const visibleCoins = coins.filter((coin) => {
         return coin.name.toLowerCase().includes(search.toLowerCase()) || coin.symbol.toLowerCase().includes(search.toLowerCase())
-    })
-
+        // eslint-disable-next-line 
+    }).sort((a, b) => {
+        if (sort==="rankUp") {
+            return a.market_cap_rank-b.market_cap_rank
+        } else if (sort==="rankDown") {
+            return b.market_cap_rank-a.market_cap_rank
+    } else if (sort==="nameUp") {
+        return a.name-b.name
+    } else if (sort==="nameDown") {
+        return b.name.localeCompare(a.name)
+} else if (sort==="priceUp") {
+    return a.current_price-b.current_price
+} else if (sort==="priceDown") {
+    return b.current_price-a.current_price
+} else if (sort==="changeUp") {
+    return a.price_change_percentage_24h-b.price_change_percentage_24h
+} else if (sort==="changeDown") {
+    return b.price_change_percentage_24h-a.price_change_percentage_24h
+} else if (sort==="mcapUp") {
+    return a.market_cap-b.market_cap
+} else if (sort==="mcapDown") {
+    return b.market_cap-a.market_cap
+} else if (sort==="volumeUp") {
+    return a.total_volume-b.total_volume
+} else if (sort==="volumeDown") {
+    return b.total_volume-a.total_volume
+} else if (sort==="supplyUp") {
+    return a.circulating_supply-b.circulating_supply
+} else if (sort==="supplyDown") {
+    return b.circulating_supply-a.circulating_supply
+}
+})
     function currencyParser (labelValue) {
         return Math.abs(Number(labelValue)) >= 1.0e+12
         ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
@@ -87,13 +121,85 @@ Math.abs(Number(labelValue)) >= 1.0e+6 ?
                 <div className="coins-container">
                     <table className="coins-table">
                         <tr className="coins-table-row">
-                            <td id="coins-table-data-1">Rank</td>
-                            <td id="coins-table-data-2">Name</td>
-                            <td id="coins-table-data-3">Price</td>
-                            <td id="coins-table-data-4">Change</td>
-                            <td id="coins-table-data-5">Mcap</td>
-                            <td id="coins-table-data-6">Volume</td>
-                            <td id="coins-table-data-7">Supply</td>
+                            <td id="coins-table-data-1">Rank
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="rankUp" id="up-change" onClick={handleSort} checked={sort ==='rankUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="rankDown" id="down-change" onClick={handleSort} checked={sort ==='rankDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form>
+                            </td>
+                            <td id="coins-table-data-2">Name
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="nameUp" id="up-change" onClick={handleSort} checked={sort ==='nameUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="nameDown" id="down-change" onClick={handleSort} checked={sort ==='nameDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                    </div>
+                            </form>
+                            </td>
+                            <td id="coins-table-data-3">Price
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="priceUp" id="up-change" onClick={handleSort} checked={sort ==='priceUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="priceDown" id="down-change" onClick={handleSort} checked={sort ==='priceDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form></td>
+                            <td id="coins-table-data-4">Change
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="changeUp" id="up-change" onClick={handleSort} checked={sort ==='changeUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="changeDown" id="down-change" onClick={handleSort} checked={sort ==='changeDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form></td>
+                            <td id="coins-table-data-5">Mcap
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="mcapUp" id="up-change" onClick={handleSort} checked={sort ==='mcapUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="mcapDown" id="down-change" onClick={handleSort} checked={sort ==='mcapDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form></td>
+                            <td id="coins-table-data-6">Volume
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="volumeUp" id="up-change" onClick={handleSort} checked={sort ==='volumeUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="volumeDown" id="down-change" onClick={handleSort} checked={sort ==='volumeDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form></td>
+                            <td id="coins-table-data-7">Circulating Supply
+                            <form className="watchlist-upDown">
+                                <div className="watchlist-">
+                                    <input type="radio" name="supplyUp" id="up-change" onClick={handleSort} checked={sort ==='supplyUp'}/>
+                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                </div>
+                                <div className="watchlist-">
+                                    <input type="radio" name="supplyDown" id="down-change" onClick={handleSort} checked={sort ==='supplyDown'}/>
+                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                </div>
+                            </form> </td>
                         </tr>
                     </table>
                     {visibleCoins.map((coin) => {
@@ -105,5 +211,4 @@ Math.abs(Number(labelValue)) >= 1.0e+6 ?
         </div>
     )
 }
-
 export default Markets;
