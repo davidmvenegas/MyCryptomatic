@@ -12,7 +12,7 @@ import { useState, useEffect } from "react/cjs/react.development";
 
 function App() {
   const[watchlist, setWatchlist] = useState([])
-
+  const[sortby, setSortby] = useState('rank')
   useEffect(() => {
     fetch('http://localhost:3000/cryptos')
     .then(r=>r.json())
@@ -27,13 +27,25 @@ function App() {
     const updatedWatchlist = watchlist.filter((crypto) => crypto.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
+
+  const visibleWatchlist = watchlist.sort((coinA, coinB) => {
+    if (sortby === 'rank') {
+      return coinA.market_cap_rank - coinB.market_cap_rank
+    }
+    else if (sortby === 'change') {
+      return coinB.price_change_percentage_24h - coinA.price_change_percentage_24h
+    }
+    else if (sortby === 'name') {
+      return coinA.name.localeCompare(coinB.name)
+    }
+  })
   return (
       <BrowserRouter>
         <Header/>
           <Routes>
             <Route exact path="/" element={<Home/>} />
-            <Route path="/markets" element={<Markets watchlist={watchlist} onWatchlist={handleAddWatchlist} onDeleteWatchlist={handleDeleteWatchlist}/>} />
-            <Route path="/portfolio/*" element={<Portfolio/>} />
+            <Route path="/markets" element={<Markets watchlist={visibleWatchlist} onWatchlist={handleAddWatchlist} onDeleteWatchlist={handleDeleteWatchlist}/>} />
+            <Route path="/portfolio/*" element={<Portfolio sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
             <Route path="/tradingBot" element={<TradingBot/>} />
             <Route path="/news" element={<News/>} />
             <Route path="/account" element={<Account/>} />

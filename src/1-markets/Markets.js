@@ -7,7 +7,7 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     const[selectedCurrency, setSelectedCurrency] = useState('usd')
     const [sign, setSign] = useState('$')
     const[search, setSearch] = useState('')
-
+    const[global, setGlobal]= useState([])
     useEffect(() => {
         fetch(`https://coingecko.p.rapidapi.com/coins/markets?vs_currency=${selectedCurrency}&page=1&per_page=500&order=market_cap_desc`, {
         "method": "GET",
@@ -21,8 +21,22 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     .catch(err => {
         console.error(err);
     });
-    // eslint-disable-next-line
-    }, [handleClick])
+    
+}, [handleClick])
+
+useEffect(() => {
+    fetch("https://coinpaprika1.p.rapidapi.com/global", {
+"method": "GET",
+"headers": {
+    "x-rapidapi-host": "coinpaprika1.p.rapidapi.com",
+    "x-rapidapi-key": "572fa8d9b1mshf9f7a919d0cfd95p1486e7jsnc7ad3408ac61"
+}
+})
+.then(r => r.json())
+.then((data) => setGlobal(data))    
+}, [])
+
+
 
     function handleClick (event) {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
@@ -36,7 +50,20 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     const visibleCoins = coins.filter((coin) => {
         return coin.name.toLowerCase().includes(search.toLowerCase()) || coin.symbol.toLowerCase().includes(search.toLowerCase())
     })
-    
+
+    function currencyParser (labelValue) {
+        return Math.abs(Number(labelValue)) >= 1.0e+12
+        ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
+        :
+Math.abs(Number(labelValue)) >= 1.0e+9 ?
+(Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+:
+Math.abs(Number(labelValue)) >= 1.0e+6 ?
+(Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+: Math.abs(Number(labelValue)) >= 1.0e+3 ?
+(Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+: Math.abs(Number(labelValue))
+}
     return (
         <div>
             <div className="markets-container">
@@ -44,8 +71,8 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
                     <form>
                         <input className="markets-search-form" type="text" placeholder="Search..." onChange={handleSearch}/>
                     </form>
-                    <h1 className="markets-marketCap">Market Cap: <span className="markets-marketCap-amount">$ 3.1</span><span className="markets-marketCap-T">T</span></h1>
-                    <h1 className="markets-totalVolume">Total Volume: <span className="markets-totalVolume-amount">128.4</span><span className="markets-totalVolume-B">B</span></h1>
+                    <h1 className="markets-marketCap">Market Cap: <span className="markets-marketCap-amount">$ {currencyParser(global.market_cap_usd)}</span><span className="markets-marketCap-T"></span></h1>
+                    <h1 className="markets-totalVolume">Total Volume: <span className="markets-totalVolume-amount">{currencyParser(global.volume_24h_usd)}</span><span className="markets-totalVolume-B"></span></h1>
                     <select onChange={handleClick} className="currency-type-selector" >
                         <option className="currency-type-item" label="AUD" value='A$'>AUD</option>
                         <option className="currency-type-item" label="CAD" value='C$'>CAD</option>
