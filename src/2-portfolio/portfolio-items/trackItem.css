@@ -1,0 +1,7 @@
+.track-item {
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}

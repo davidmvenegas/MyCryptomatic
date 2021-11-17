@@ -6,11 +6,11 @@
 }
 
 .watchlist-item {
-    border: .25rem solid #181818;
+    border: .25rem solid #444;
     border-radius: 1rem;
     padding: 1.35rem;
     width: 52.5vw;
-    height: 4rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

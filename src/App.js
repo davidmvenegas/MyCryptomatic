@@ -32,6 +32,7 @@ function App() {
     const updatedWatchlist=watchlist.filter((c) => c.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
+
   const visibleWatchlist = watchlist.sort((coinA, coinB) => {
     if (sortby === 'rank') {
       return coinA.market_cap_rank - coinB.market_cap_rank
