@@ -1,15 +1,11 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import "./track.css"
 import TrackItem from './TrackItem'
 
 function Track() {
-    // const [cost, setCost] = useState[[]]
-    // const [totalCost, setTotalCost] = useState[0]
-    const cryptoType = useRef(null)
 
     function addPurchase(e) {
         e.preventDefault()
-        console.log(cryptoType);
     }
 
     return (
@@ -26,14 +22,14 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select cryptocurrency..." autoComplete="off" />
-                            <datalist id="cryptoTypeList" ref={cryptoType}>
+                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Cryptocurrency..." autoComplete="off" />
+                            <datalist id="cryptoTypeList">
                                 <option value="Bitcoin">BTC</option>
                                 <option value="Etherium">ETH</option>
                                 <option value="Etherium">ETH</option>
                             </datalist>
-                        <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." />
-                        <input type="submit" value="Add" />
+                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." />
+                        <input className="track-submit" type="submit" value="Add" />
                     </form>
                 </div>
                 <div className="track-separator-2"></div>

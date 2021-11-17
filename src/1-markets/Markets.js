@@ -106,16 +106,16 @@ Math.abs(Number(labelValue)) >= 1.0e+6 ?
                     <h1 className="markets-marketCap">Market Cap: <span className="markets-marketCap-amount">$ {currencyParser(global.market_cap_usd)}</span><span className="markets-marketCap-T"></span></h1>
                     <h1 className="markets-totalVolume">Total Volume: <span className="markets-totalVolume-amount">{currencyParser(global.volume_24h_usd)}</span><span className="markets-totalVolume-B"></span></h1>
                     <select onChange={handleClick} className="currency-type-selector" >
-                        <option className="currency-type-item" label="AUD" value='A$'>AUD</option>
-                        <option className="currency-type-item" label="CAD" value='C$'>CAD</option>
-                        <option className="currency-type-item" label="CHF" value='CHF'>CHF</option>
-                        <option className="currency-type-item" label="CNY" value='元'>CNY</option>
-                        <option className="currency-type-item" label="EUR" value='€'>EUR</option>
-                        <option className="currency-type-item" label="GBP" value='£'>GBP</option>
-                        <option className="currency-type-item" label="HKD" value='HK$'>HKD</option>
-                        <option className="currency-type-item" label="JPY" value='¥'>JPY</option>
-                        <option className="currency-type-item" label="NZD" value='NZ$'>NZD</option>
-                        <option className="currency-type-item" label="USD" value='$' selected >USD</option>
+                        <option id="currency-type-item" label="AUD" value='A$'>AUD</option>
+                        <option id="currency-type-item" label="CAD" value='C$'>CAD</option>
+                        <option id="currency-type-item" label="CHF" value='CHF'>CHF</option>
+                        <option id="currency-type-item" label="CNY" value='元'>CNY</option>
+                        <option id="currency-type-item" label="EUR" value='€'>EUR</option>
+                        <option id="currency-type-item" label="GBP" value='£'>GBP</option>
+                        <option id="currency-type-item" label="HKD" value='HK$'>HKD</option>
+                        <option id="currency-type-item" label="JPY" value='¥'>JPY</option>
+                        <option id="currency-type-item" label="NZD" value='NZ$'>NZD</option>
+                        <option id="currency-type-item" label="USD" value='$' selected >USD</option>
                     </select>
                 </div>
                 <div className="coins-container">
@@ -202,10 +202,12 @@ Math.abs(Number(labelValue)) >= 1.0e+6 ?
                             </form> </td>
                         </tr>
                     </table>
-                    {visibleCoins.map((coin) => {
-                        //I am giving each coin a favorite key of false
-                        return <Coin watchlist={watchlist} sign={sign} key={coin.id} coin={coin} onWatchlist={onWatchlist} onDeleteWatchlist={onDeleteWatchlist}/>
-                    })}
+                    <div className="coin-wrapper">
+                        {visibleCoins.map((coin) => {
+                            //I am giving each coin a favorite key of false
+                            return <Coin watchlist={watchlist} sign={sign} key={coin.id} coin={coin} onWatchlist={onWatchlist} onDeleteWatchlist={onDeleteWatchlist}/>
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

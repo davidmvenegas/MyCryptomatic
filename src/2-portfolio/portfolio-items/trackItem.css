@@ -2,6 +2,76 @@
     padding: 2rem 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
+    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, .2);
+    width: 50vw;
+    height: 5rem;
+    margin: 1rem 0;
+}
+.track-item-name-container {
+    margin-right: -1.5rem;
+    margin-left: 1.5rem;
+}
+.track-item-name {
+    font-size: 3rem;
+}
+.track-item-symbol {
+    font-size: 1.15rem;
+}
+.track-item-cost-container {
+    margin-right: -.5rem;
+    margin-left: .5rem;
+}
+.track-item-cost span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+}
+.track-item-cost {
+    font-size: 1.35rem;
+    color: gray;
+}
+.track-item-cur-price {
+    font-size: 2.25rem;
+    color: #fff;
+}
+.track-item-amount {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    margin-left: -1rem;
+}
+.track-item-amount span {
+    color: #bbb;
+    font-size: 1.5rem;
+    margin-left: .25rem;
+}
+.track-item-change-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.track-item-arrow {
+    font-size: 2rem;
+    margin-right: 2rem;
+    margin-left: -2rem;
+}
+.track-item-change {
+    font-size: 3rem;
+    margin-right: 1rem;
+    margin-left: -1rem;
+}
+.track-item-remove {
+    font-size: 2.5rem;
+    color: #ddd;
+    transition: transform .15s ease;
+}
+.track-item-remove:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.track-item-remove:active {
+    color: red;
 }
