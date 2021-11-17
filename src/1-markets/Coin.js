@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './coin.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
@@ -20,7 +20,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 )}else{
                     console.log('new to db',)
                     return (
-                        fetch('http://localhost:3000/cryptos', {
+                        fetch('http://localhost:3001/cryptos', {
                             method: "POST",
                             headers: {
                                 'Content-Type': 'application/json'

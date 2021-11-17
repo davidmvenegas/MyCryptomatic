@@ -5,10 +5,20 @@
     justify-content: center;
 }
 .portfolio-button {
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: 600;
     width: 50vw;
     height: 5rem;
     cursor: pointer;
+    border: .2rem solid #111;
+    text-transform: uppercase;
+    background-color: #222;
+    color: #fff;
+}
+.portfolio-button:hover {
+    background-color: #444;
 }
 .portfolio-button .active-portfolio {
-    background-color: #222;
+    background-color: red;
 }
