@@ -27,7 +27,7 @@ function App() {
     const updatedWatchlist = watchlist.filter((crypto) => crypto.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
-
+// eslint-disable-next-line
   const visibleWatchlist = watchlist.sort((coinA, coinB) => {
     if (sortby === 'rank') {
       return coinA.market_cap_rank - coinB.market_cap_rank

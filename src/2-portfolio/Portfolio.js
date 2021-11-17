@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import './portfolio.css';
 import { Routes, Route } from "react-router-dom";
-import PortfolioHeader from './portfolio-items/PortfolioHeader'
+import PortfolioHeader from './PortfolioHeader'
 import Watchlist from './portfolio-items/Watchlist';
 import Track from './portfolio-items/Track';
 

@@ -21,7 +21,7 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     .catch(err => {
         console.error(err);
     });
-    
+    // eslint-disable-next-line
 }, [handleClick])
 
 useEffect(() => {
@@ -35,8 +35,6 @@ useEffect(() => {
 .then(r => r.json())
 .then((data) => setGlobal(data))    
 }, [])
-
-
 
     function handleClick (event) {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
