@@ -4,6 +4,7 @@ import Coin from './Coin'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+
 function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     const [coins, setCoins] = useState([])
     const[selectedCurrency, setSelectedCurrency] = useState('usd')
@@ -25,77 +26,81 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
         console.error(err);
     });
     // eslint-disable-next-line
-}, [handleClick])
-useEffect(() => {
-    fetch("https://coinpaprika1.p.rapidapi.com/global", {
-"method": "GET",
-"headers": {
-    "x-rapidapi-host": "coinpaprika1.p.rapidapi.com",
-    "x-rapidapi-key": "572fa8d9b1mshf9f7a919d0cfd95p1486e7jsnc7ad3408ac61"
-}
-})
-.then(r => r.json())
-.then((data) => setGlobal(data))    
-}, [])
-function handleSort (e) {
-    console.log(e.target.name)
-    console.log(sort)
-    setSort(e.target.name)
-}
+    }, [handleClick])
+    useEffect(() => {
+        fetch("https://coinpaprika1.p.rapidapi.com/global", {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coinpaprika1.p.rapidapi.com",
+        "x-rapidapi-key": "572fa8d9b1mshf9f7a919d0cfd95p1486e7jsnc7ad3408ac61"
+    }
+    })
+    .then(r => r.json())
+    .then((data) => setGlobal(data))    
+    }, [])
+
+    function handleSort (e) {
+        console.log(e.target.name)
+        console.log(sort)
+        setSort(e.target.name)
+    }
+
     function handleClick (event) {
         setSelectedCurrency(event.target.options[event.target.selectedIndex].text.toLowerCase())
         setSign(event.target.value)
     }
+
     function handleSearch(e) {
         setSearch(e.target.value)
     }
+
     const visibleCoins = coins.filter((coin) => {
         return coin.name.toLowerCase().includes(search.toLowerCase()) || coin.symbol.toLowerCase().includes(search.toLowerCase())
         // eslint-disable-next-line 
     }).sort((a, b) => {
-        if (sort==="rankUp") {
-            return a.market_cap_rank-b.market_cap_rank
-        } else if (sort==="rankDown") {
-            return b.market_cap_rank-a.market_cap_rank
+    if (sort==="rankUp") {
+        return a.market_cap_rank-b.market_cap_rank
+    } else if (sort==="rankDown") {
+        return b.market_cap_rank-a.market_cap_rank
     } else if (sort==="nameUp") {
         return a.name-b.name
     } else if (sort==="nameDown") {
         return b.name.localeCompare(a.name)
-} else if (sort==="priceUp") {
-    return a.current_price-b.current_price
-} else if (sort==="priceDown") {
-    return b.current_price-a.current_price
-} else if (sort==="changeUp") {
-    return a.price_change_percentage_24h-b.price_change_percentage_24h
-} else if (sort==="changeDown") {
-    return b.price_change_percentage_24h-a.price_change_percentage_24h
-} else if (sort==="mcapUp") {
-    return a.market_cap-b.market_cap
-} else if (sort==="mcapDown") {
-    return b.market_cap-a.market_cap
-} else if (sort==="volumeUp") {
-    return a.total_volume-b.total_volume
-} else if (sort==="volumeDown") {
-    return b.total_volume-a.total_volume
-} else if (sort==="supplyUp") {
-    return a.circulating_supply-b.circulating_supply
-} else if (sort==="supplyDown") {
-    return b.circulating_supply-a.circulating_supply
-}
-})
+    } else if (sort==="priceUp") {
+        return a.current_price-b.current_price
+    } else if (sort==="priceDown") {
+        return b.current_price-a.current_price
+    } else if (sort==="changeUp") {
+        return a.price_change_percentage_24h-b.price_change_percentage_24h
+    } else if (sort==="changeDown") {
+        return b.price_change_percentage_24h-a.price_change_percentage_24h
+    } else if (sort==="mcapUp") {
+        return a.market_cap-b.market_cap
+    } else if (sort==="mcapDown") {
+        return b.market_cap-a.market_cap
+    } else if (sort==="volumeUp") {
+        return a.total_volume-b.total_volume
+    } else if (sort==="volumeDown") {
+        return b.total_volume-a.total_volume
+    } else if (sort==="supplyUp") {
+        return a.circulating_supply-b.circulating_supply
+    } else if (sort==="supplyDown") {
+        return b.circulating_supply-a.circulating_supply
+    }
+    })
+
     function currencyParser (labelValue) {
         return Math.abs(Number(labelValue)) >= 1.0e+12
         ? (Math.abs(Number(labelValue)) / 1.0e+12).toFixed(2) + "T"
-        :
-Math.abs(Number(labelValue)) >= 1.0e+9 ?
-(Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
-:
-Math.abs(Number(labelValue)) >= 1.0e+6 ?
-(Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
-: Math.abs(Number(labelValue)) >= 1.0e+3 ?
-(Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
-: Math.abs(Number(labelValue))
+        : Math.abs(Number(labelValue)) >= 1.0e+9 ?
+        (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+        : Math.abs(Number(labelValue)) >= 1.0e+6 ?
+        (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+        : Math.abs(Number(labelValue)) >= 1.0e+3 ?
+        (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+        : Math.abs(Number(labelValue))
 }
+
     return (
         <div>
             <div className="markets-container">
@@ -204,7 +209,6 @@ Math.abs(Number(labelValue)) >= 1.0e+6 ?
                     </table>
                     <div className="coin-wrapper">
                         {visibleCoins.map((coin) => {
-                            //I am giving each coin a favorite key of false
                             return <Coin watchlist={watchlist} sign={sign} key={coin.id} coin={coin} onWatchlist={onWatchlist} onDeleteWatchlist={onDeleteWatchlist}/>
                         })}
                     </div>
