@@ -5,7 +5,7 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import WatchlistItem from './WatchlistItem'
 
-function Watchlist({watchlist , sortby, setSortby}) {
+function Watchlist({watchlist , sortby, setSortby, handleDelete}) {
 function handleClick (e) {
     setSortby(e.target.value)
 }
@@ -46,7 +46,7 @@ function handleClick (e) {
                     <div className="watchlist-seperator"></div>
                     <div className="watchlist-contents">
                         {watchlist.map((c) => {
-                            return <WatchlistItem key={c.id} c={c}/>
+                            return <WatchlistItem handleDelete={handleDelete} key={c.id} c={c}/>
                         })}
                     </div>
                 </div>

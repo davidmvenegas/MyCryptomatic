@@ -28,6 +28,10 @@ function App() {
     setWatchlist(updatedWatchlist)
   }
 
+  function handleDelete(deletedItem) {
+    const updatedWatchlist=watchlist.filter((c) => c.id !== deletedItem.id)
+    setWatchlist(updatedWatchlist)
+  }
   const visibleWatchlist = watchlist.sort((coinA, coinB) => {
     if (sortby === 'rank') {
       return coinA.market_cap_rank - coinB.market_cap_rank
@@ -44,8 +48,8 @@ function App() {
         <Header/>
           <Routes>
             <Route exact path="/" element={<Home/>} />
-            <Route path="/markets" element={<Markets watchlist={visibleWatchlist} onWatchlist={handleAddWatchlist} onDeleteWatchlist={handleDeleteWatchlist}/>} />
-            <Route path="/portfolio/*" element={<Portfolio sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
+            <Route path="/markets" element={<Markets  watchlist={visibleWatchlist} onWatchlist={handleAddWatchlist} onDeleteWatchlist={handleDeleteWatchlist}/>} />
+            <Route path="/portfolio/*" element={<Portfolio handleDelete={handleDelete} sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
             <Route path="/tradingBot" element={<TradingBot/>} />
             <Route path="/news" element={<News/>} />
             <Route path="/account" element={<Account/>} />
