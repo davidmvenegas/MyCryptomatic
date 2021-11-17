@@ -9,8 +9,8 @@ function TrackItem() {
                     <h1>TYPE_OF_CRYPTO</h1>
                     <p>TYPE_SYMBOL</p>
                 </div>
-                <h2>AMOUNT</h2>
                 <h2>COST_AT_BUY</h2>
+                <h2>AMOUNT</h2>
                 <h2>CHANGE_SINCE_BUY</h2>
             </div>
         </div>

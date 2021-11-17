@@ -11,7 +11,6 @@ function Track() {
         e.preventDefault()
     }
 
-
     return (
         <div className="track-container">
             <div className="track">
@@ -26,13 +25,19 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input type="text" name="cryptoType" id="cryptoType" placeholder="Crypto type..." ref={cryptoType} />
+                        <input list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select cryptocurrency..." autoComplete="off" ref={cryptoType} />
+                            <datalist id="cryptoTypeList">
+                                <option value="Bitcoin">BTC</option>
+                                <option value="Etherium">ETH</option>
+                                <option value="Etherium">ETH</option>
+                            </datalist>
                         <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." />
                         <input type="submit" value="Add" />
                     </form>
                 </div>
                 <div className="track-separator-2"></div>
                 <div className="track-item-container">
+                    <TrackItem />
                     <TrackItem />
                     <TrackItem />
                 </div>

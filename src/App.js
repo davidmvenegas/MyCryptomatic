@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./header|footer/Header"
 import Home from "./0-home/Home";
@@ -8,7 +8,6 @@ import TradingBot from "./3-tradingBot/TradingBot"
 import News from "./4-news/News"
 import Account from "./5-account/Account"
 import Footer from "./header|footer/Footer"
-import { useState, useEffect } from "react/cjs/react.development";
 
 function App() {
   const[watchlist, setWatchlist] = useState([])
@@ -27,12 +26,13 @@ function App() {
     const updatedWatchlist = watchlist.filter((crypto) => crypto.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
-
+  
   function handleDelete(deletedItem) {
     const updatedWatchlist=watchlist.filter((c) => c.id !== deletedItem.id)
     setWatchlist(updatedWatchlist)
   }
 
+    // eslint-disable-next-line
   const visibleWatchlist = watchlist.sort((coinA, coinB) => {
     if (sortby === 'rank') {
       return coinA.market_cap_rank - coinB.market_cap_rank

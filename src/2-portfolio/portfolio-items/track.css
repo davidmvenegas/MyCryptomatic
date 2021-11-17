@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: top;
     flex-direction: column;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    
 }
 .track {
     width: 80vw;
@@ -14,10 +15,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: .1rem solid black;
+    border: .5rem solid black;
+    border-radius: 1.5rem;
+    background: linear-gradient(0deg, rgba(25,25,25,1) 25%, rgba(25,25,25,0.5) 50%, rgba(25,25,25,0.25) 75%, rgba(25,25,25,0.1) 100%);
 }
 .track-info-container {
-    border: .1rem solid black;
     width: 80vw;
     padding: 2rem 0;
     margin: 1rem 0;
@@ -34,10 +36,14 @@
     column-gap: 25rem;
 }
 .track-separator-1 {
+    width: 70vw;
+    height: .35rem;
+    background-color: #000;
+    margin: .6rem 0;
+    margin-bottom: .7rem;
 }
 .track-form-container {
     width: 80vw;
-    border: .1rem solid black;
     padding: 2rem 0;
     margin: 1rem 0;
     display: flex;
@@ -51,9 +57,12 @@
     width: 40vw;
 }
 .track-separator-2 {
+    width: 70vw;
+    height: .35rem;
+    background-color: #000;
+    margin: 1rem 0 1.75rem;
 }
 .track-item-container {
     width: 80vw;
-    border: .1rem solid black;
     padding: 2rem 0;
 }

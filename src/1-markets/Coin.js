@@ -10,7 +10,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
         if (watchlist.find((c) => c.id === coin.id===true)) {
             console.log('delete from db')
             return (
-                fetch(`http://localhost:3000/cryptos/${coin.id}`, {
+                fetch(`http://localhost:3001/cryptos/${coin.id}`, {
                     method: "DELETE",
                 })
                 .then(r=>r.json())

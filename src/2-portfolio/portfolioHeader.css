@@ -3,18 +3,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    background-color: #111;
+    padding-bottom: 2rem;
+}
+.portfolio-header-separator {
+    width: 75vw;
+    height: .65rem;
+    background-color: black;
+    margin: .25rem 0 .25rem;
+    border-radius: 50%;
 }
 .portfolio-button {
-    font-family: monospace;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
-    width: 50vw;
-    height: 5rem;
+    height: 4.75rem;
     cursor: pointer;
     border: .2rem solid #111;
+    border-radius: 1rem;
+    width: 30vw;
+    margin: 1.75rem 2.5rem .25rem;
     text-transform: uppercase;
     background-color: #222;
     color: #fff;
+    transition: background-color .2s ease;
 }
 .portfolio-button:hover {
     background-color: #444;
