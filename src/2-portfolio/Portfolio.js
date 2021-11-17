@@ -5,12 +5,12 @@ import PortfolioHeader from './PortfolioHeader'
 import Watchlist from './portfolio-items/Watchlist';
 import Track from './portfolio-items/Track';
 
-function Portfolio({watchlist, sortby, setSortby}) {
+function Portfolio({watchlist, sortby, setSortby, handleDelete}) {
     return (
         <div>
             <PortfolioHeader/>
             <Routes>
-                <Route path="/watchlist" element={<Watchlist sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
+                <Route path="/watchlist" element={<Watchlist handleDelete={handleDelete} sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
                 <Route path="/track" element={<Track/>} />
             </Routes>
         </div>
