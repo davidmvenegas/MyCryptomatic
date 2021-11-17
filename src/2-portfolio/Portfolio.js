@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './portfolio.css';
 import { Routes, Route } from "react-router-dom";
 import PortfolioHeader from './portfolio-items/PortfolioHeader'
 import Watchlist from './portfolio-items/Watchlist';
 import Track from './portfolio-items/Track';
 
-function Portfolio() {
+function Portfolio({watchlist, sortby, setSortby}) {
     return (
         <div>
             <PortfolioHeader/>
             <Routes>
-                <Route path="/watchlist" element={<Watchlist/>} />
+                <Route path="/watchlist" element={<Watchlist sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
                 <Route path="/track" element={<Track/>} />
             </Routes>
         </div>
