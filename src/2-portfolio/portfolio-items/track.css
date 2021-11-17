@@ -2,9 +2,58 @@
     min-height: 53.85vh;
     background-color: #333;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+    margin: 2rem 0;
 }
 .track {
-    text-align: center;
-    padding-top: 20rem;
-    font-size: 5rem;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: .1rem solid black;
+}
+.track-info-container {
+    border: .1rem solid black;
+    width: 80vw;
+    padding: 2rem 0;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.track-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 5rem;
+    column-gap: 25rem;
+}
+.track-separator-1 {
+}
+.track-form-container {
+    width: 80vw;
+    border: .1rem solid black;
+    padding: 2rem 0;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.track-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+}
+.track-separator-2 {
+}
+.track-item-container {
+    width: 80vw;
+    border: .1rem solid black;
+    padding: 2rem 0;
 }

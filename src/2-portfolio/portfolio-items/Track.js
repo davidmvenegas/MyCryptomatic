@@ -13,18 +13,17 @@ function Track() {
 
 
     return (
-        <div>
-            <div className="track-container">
+        <div className="track-container">
+            <div className="track">
                 <div className="track-info-container">
-                    <h1 className="track-title">TRACK_HEADER</h1>
                     <div className="track-info">
-                        <h1>COST</h1>
                         <h1>VALUE</h1>
                         <h1>DAY_GAIN</h1>
+                        <h1>COST</h1>
                         <h1>TOTAL_GAIN</h1>
                     </div>
-                    <h1 className="track-total-cost">$0</h1>
                 </div>
+                <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
                         <input type="text" name="cryptoType" id="cryptoType" placeholder="Crypto type..." ref={cryptoType} />
@@ -32,6 +31,7 @@ function Track() {
                         <input type="submit" value="Add" />
                     </form>
                 </div>
+                <div className="track-separator-2"></div>
                 <div className="track-item-container">
                     <TrackItem />
                     <TrackItem />
