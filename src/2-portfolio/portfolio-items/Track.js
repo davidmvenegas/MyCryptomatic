@@ -37,8 +37,8 @@ function Track() {
     
     function addPurchase(e) {
         const coin = cryptos.find((c) => c.name===selectedCoin)
-        coin.shares=shares
-        coin.entry=entry
+        coin.shares= parseFloat(shares)
+        coin.entry= parseFloat(entry)
         console.log(coin)
         e.preventDefault()
         fetch('http://localhost:3001/portfolio', {
@@ -59,6 +59,15 @@ function Track() {
             console.error(err);
         });
     }
+
+    function handleUpdate(updatedCoin) {
+        setPort(port.map((co) => {
+            if(co.id ===updatedCoin.id) {
+                return updatedCoin
+            } else {
+                return co
+            }}))
+    }
     let value = port===[] ? null : port.reduce(function (previousValue, currentValue) {
         return previousValue + (currentValue.current_price *currentValue.shares)
     }, 0)
@@ -69,8 +78,7 @@ function Track() {
     let gain = port===[] ? null : port.reduce(function (previousValue, currentValue) {
         return previousValue + (currentValue.entry * currentValue.shares)
     }, 0)
-    console.log(value)
-    console.log(cost)
+
 
     function handleDeletePortfolio (deletedItem) {
         const updatedPortfolio = port.filter((coin) => coin.id !== deletedItem.id)
@@ -117,7 +125,7 @@ function Track() {
                 <div className="track-separator-2"></div>
                 <div className="track-item-container">
                     {port.map((coin) => {
-                        return <TrackItem key={coin.id} coin={coin} handleDeletePortfolio={handleDeletePortfolio}/>
+                        return <TrackItem handleUpdate={handleUpdate}cryptos={cryptos} key={coin.id} coin={coin} handleDeletePortfolio={handleDeletePortfolio}/>
                     })}
                 </div>
             </div>
