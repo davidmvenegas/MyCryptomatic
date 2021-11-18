@@ -7,7 +7,6 @@
     justify-content: top;
     flex-direction: column;
     margin: 2.5rem 0;
-    
 }
 .track {
     width: 80vw;
@@ -15,8 +14,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: .5rem solid black;
-    border-radius: 1.5rem;
+    border: .5rem solid #111;
+    border-radius: .5rem;
     background: linear-gradient(0deg, rgba(25,25,25,1) 25%, rgba(25,25,25,0.5) 50%, rgba(25,25,25,0.25) 75%, rgba(25,25,25,0.1) 100%);
 }
 .track-info-container {
@@ -63,7 +62,7 @@
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #fff;
+    background-color: #bbb;
     border: none;
     font-weight: 600;
     border-radius: .25rem;
@@ -76,6 +75,9 @@
     font-weight: 500;
     letter-spacing: -.1rem;
 }
+.track-crypto-type:focus {
+    background-color: white;
+}
 .track-crypto-amount {
     position: relative;
     margin-left: -1rem;
@@ -86,7 +88,7 @@
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #fff;
+    background-color: #bbb;
     border: none;
     border-radius: .25rem;
     box-shadow: .25rem .25rem .75rem rgba(0,0,0);
@@ -97,6 +99,9 @@
     font-weight: 500;
     letter-spacing: -.1rem;
 }
+.track-crypto-amount:focus {
+    background-color: white;
+}
 .track-crypto-price {
     margin-left: -1rem;
     margin-right: 1rem;
@@ -106,7 +111,7 @@
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #fff;
+    background-color: #bbb;
     border: none;
     border-radius: .25rem;
     box-shadow: .25rem .25rem .75rem rgba(0,0,0);
@@ -116,6 +121,9 @@
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: -.1rem;
+}
+.track-crypto-price:focus {
+    background-color: white;
 }
 .track-submit {
     height: 4.25rem;

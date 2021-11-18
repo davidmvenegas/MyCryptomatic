@@ -7,28 +7,26 @@
     background-color: #111;
     padding-bottom: 2.5rem;
 }
-.portfolio-header-separator {
-    width: 100vw;
-    height: .5rem;
-    background-color: black;
-}
 .portfolio-button {
     font-size: 2rem;
     font-weight: 600;
-    height: 5rem;
+    height: 5.5rem;
     cursor: pointer;
     border: .2rem solid #111;
     border-radius: 1rem;
-    width: 35vw;
-    margin: 2.25rem 4rem .25rem;
+    width: 38.5vw;
+    margin: 1.25rem 2.5rem .25rem;
     text-transform: uppercase;
-    background-color: #222;
+    background-color: #333;
     color: #fff;
     transition: background-color .2s ease;
-    box-shadow: .15rem .15rem .25rem black;
+    box-shadow: .25rem .25rem .25rem black;
 }
 .portfolio-button:hover {
     background-color: #444;
+}
+.portfolio-button:active {
+    transform: scale(.95);
 }
 .portfolio-button .active-portfolio {
     color: blueviolet;

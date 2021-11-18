@@ -41,13 +41,19 @@ function TrackItem({coin, handleDeletePortfolio}) {
                     <button className="track-item-btn-front" onClick={handleFlip}>EDIT</button>
                 </div>
                 <div className="track-item">
-                    <p className="track-item-symbol">{coin.name}</p>
-                    <form>
-                        <input type="number" step=".00001" max={coin.shares} placeholder={"0 " + coin.symbol.toUpperCase()} />
-                        <input type="submit" value="Remove" />
+                    <form className="track-update-form-1">
+                        <input className="track-item-update-input" type="number" step=".00001" max={coin.shares} placeholder={"0 " + coin.symbol.toUpperCase()} />
+                        <input className="track-item-update-btn" type="submit" value="Remove" />
                     </form>
-                    <button onClick={handleClick}>Remove All</button>
-                    <button className="track-item-btn-back" onClick={handleFlip}>CANCEL</button>
+                    <div className="track-update-form-2">
+                        <div className="track-update-form-separator"></div>
+                    </div>
+                    <div className="track-update-form-3">
+                        <button className="track-item-delete-btn" onClick={handleClick}>Remove All</button>
+                    </div>
+                    <div className="track-update-form-4">
+                        <button className="track-item-btn-back" onClick={handleFlip}>CANCEL</button>
+                    </div>
                 </div>
             </ReactCardFlip>
         </div>

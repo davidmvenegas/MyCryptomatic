@@ -78,7 +78,7 @@
     outline: none;
     flex: 1%;
     padding: 1rem 2rem;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.4rem;
     background-color: #888;
     cursor: pointer;
@@ -95,6 +95,8 @@
     opacity: .8;
 }
 .track-item-btn-back {
+    margin-left: 1rem;
+    margin-right: -1rem;
     letter-spacing: .025rem;
     outline: none;
     padding: .75rem 1rem;
@@ -124,4 +126,117 @@
 }
 .track-item-remove:active {
     color: red;
+}
+.track-item-update-input {
+    margin-left: 1.5rem;
+    margin-right: -1.5rem;
+    position: relative;
+    height: 3.75rem;
+    width: 25rem;
+    font-weight: 600;
+    font-size: 2.25rem;
+    outline: none;
+    padding: 0 1.5rem;
+    background-color: #bbb;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: .25rem .25rem .75rem rgba(0,0,0);
+}
+.track-item-update-input::placeholder {
+    color: #555;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -.1rem;
+}
+.track-item-update-input:focus {
+    background-color: white;
+}
+.track-item-update-btn {
+    margin-left: -3rem;
+    margin-right: 3rem;
+    height: 3.75rem;
+    width: 9.25rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ddd;
+    outline: none;
+    text-align: center;
+    padding: 0 1rem;
+    box-shadow: .25rem .25rem .5rem rgba(0,0,0);
+    text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
+    background-color: red;
+    border: none;
+    border-radius: .5rem;
+    transition: all .25s ease;
+    text-transform: uppercase;
+}
+.track-item-update-btn:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
+}
+.track-item-delete-btn {
+    height: 4.75rem;
+    width: 12.5rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #ddd;
+    outline: none;
+    text-align: center;
+    padding: 0 1rem;
+    box-shadow: .25rem .25rem .5rem rgba(0,0,0);
+    text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
+    background-color: red;
+    border: none;
+    border-radius: .5rem;
+    transition: all .25s ease;
+    text-transform: uppercase;
+}
+.track-item-delete-btn:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
+}
+.track-update-form-separator {
+    height: 7.5vh;
+    width: .35rem;
+    border-radius: 5rem;
+    background-color: #777;
+}
+.track-update-form-1 {
+    margin-left: 1rem;
+    margin-right: -1rem;
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+.track-update-form-2 {
+    margin-left: -1.5rem;
+    margin-right: 1.5rem;
+    flex: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+
+}
+.track-update-form-3 {
+    flex: 17.5%;
+    margin-left: -3.25rem;
+    margin-right: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+
+}
+.track-update-form-4 {
+    flex: 11.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+
 }
