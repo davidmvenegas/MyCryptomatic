@@ -6,8 +6,8 @@ function Track() {
     const [port, setPort] = useState([])
     const [cryptos, setCryptos] = useState([])  
     const[selectedCoin, setSelectedCoin]=useState([])
-    const[shares, setShares] = useState(0)
-    const[entry, setEntry] = useState(0)
+    const[shares, setShares] = useState('Amount...')
+    const[entry, setEntry] = useState('Entry Price...')
 
 //fetchinng our crypto data to render in our list and fetching our json portfolio data and setting bothn to a state
     useEffect(() => {
@@ -49,7 +49,11 @@ function Track() {
         })
         .then(r => r.json())
         //adding item into my portfolio
-        .then((c) => setPort([...port, c]))
+        .then((c) => {setPort([...port, c])
+            setSelectedCoin([])
+            setShares('Amount...')
+            setEntry('Entry Price...')
+        })
         .catch(err => {
             console.error(err);
         });
@@ -86,14 +90,14 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)}/>
+                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)} value={selectedCoin}/>
                             <datalist id="cryptoTypeList" >
                         {cryptos.map((coin) => {
                             return <option key={coin.id} value={coin.name}>{coin.symbol}</option>
                         })} 
                             </datalist>
-                        <input className="track-crypto-amount" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)}/>
-                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)}/>
+                        <input className="track-crypto-amount" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)} value={entry}/>
+                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)} value={shares}/>
                         <input className="track-submit" type="submit" value="Add" />
                     </form>
                 </div>
