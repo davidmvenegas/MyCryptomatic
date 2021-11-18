@@ -92,6 +92,7 @@ function Track() {
                         <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount Of Shares..." onChange={(e) => setShares(e.target.value)}/>
                         <input type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." onChange={(e) => setEntry(e.target.value)}/>
                         <input type="submit" value="Add" />
+
                     </form>
                 </div>
                 <div className="track-separator-2"></div>

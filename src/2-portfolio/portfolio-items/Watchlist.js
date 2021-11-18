@@ -43,11 +43,11 @@ function handleNewClick(e){
                             </form>
                             <form className="watchlist-upDown">
                                 <div className="watchlist-upDownContainer">
-                                    <input type="radio" name="up" id="up-change"  onClick={handleNewClick} checked={up ===true}/>
+                                    <input type="radio" name="up" id="up-change"  onClick={handleNewClick} checked={up===true}/>
                                     <label className="watchlist-upDown-item" htmlFor="up-change"><FontAwesomeIcon icon={faCaretUp}/></label>
                                 </div>
                                 <div className="watchlist-upDownContainer">
-                                    <input type="radio" name="down" id="down-change" onClick={handleNewClick} checked={up ===false}/>
+                                    <input type="radio" name="down" id="down-change" onClick={handleNewClick} checked={up===false}/>
                                     <label className="watchlist-upDown-item" htmlFor="down-change" ><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form>

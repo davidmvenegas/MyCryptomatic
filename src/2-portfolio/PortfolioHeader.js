@@ -8,8 +8,8 @@ function PortfolioHeader() {
             <div className="portfolio-main-buttons">
             <div className="portfolio-header-separator"></div>
                 <div>
-                    <NavLink to="/portfolio/watchlist"><button activeClassName="active-header" className="portfolio-button portfolio-watchlist-button">Watchlist</button></NavLink> 
-                    <NavLink to="/portfolio/track"><button activeClassName="active-header" className="portfolio-button portfolio-track-button">Track</button></NavLink> 
+                    <NavLink to="/portfolio/watchlist" activeClassName="active-portfolio"><button className="portfolio-button">Watchlist</button></NavLink>
+                    <NavLink to="/portfolio/track" activeClassName="active-portfolio"><button className="portfolio-button">Track</button></NavLink>
                 </div>
             </div>
         </div>

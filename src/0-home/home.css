@@ -51,9 +51,9 @@
 .home-button {
     margin-top: 2.5rem;
     width: 14.25rem;
-    height: 5.25rem;
+    height: 5rem;
     border-radius: 4.5rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     border: none;
     transition: all .25s ease;

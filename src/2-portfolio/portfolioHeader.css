@@ -5,32 +5,31 @@
     justify-content: center;
     flex-direction: column;
     background-color: #111;
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 .portfolio-header-separator {
-    width: 75vw;
-    height: .65rem;
+    width: 100vw;
+    height: .5rem;
     background-color: black;
-    margin: .25rem 0 .25rem;
-    border-radius: 50%;
 }
 .portfolio-button {
     font-size: 2rem;
     font-weight: 600;
-    height: 4.75rem;
+    height: 5rem;
     cursor: pointer;
     border: .2rem solid #111;
     border-radius: 1rem;
-    width: 30vw;
-    margin: 1.75rem 2.5rem .25rem;
+    width: 35vw;
+    margin: 2.25rem 4rem .25rem;
     text-transform: uppercase;
     background-color: #222;
     color: #fff;
     transition: background-color .2s ease;
+    box-shadow: .25rem .25rem .25rem black;
 }
 .portfolio-button:hover {
     background-color: #444;
 }
 .portfolio-button .active-portfolio {
-    background-color: red;
+    color: blueviolet;
 }
