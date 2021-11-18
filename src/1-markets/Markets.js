@@ -63,7 +63,7 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     } else if (sort==="rankDown") {
         return b.market_cap_rank-a.market_cap_rank
     } else if (sort==="nameUp") {
-        return a.name-b.name
+        return a.name.localeCompare(b.name)
     } else if (sort==="nameDown") {
         return b.name.localeCompare(a.name)
     } else if (sort==="priceUp") {
@@ -127,84 +127,85 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
                     <table className="coins-table">
                         <tr className="coins-table-row">
                             <td id="coins-table-data-1">Rank
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
                                     <input type="radio" name="rankUp" id="up-change" onClick={handleSort} checked={sort ==='rankUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                                    <label className="coin-upDown-item" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
+                                <div className="coins-rank">
                                     <input type="radio" name="rankDown" id="down-change" onClick={handleSort} checked={sort ==='rankDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                    <label className="coin-upDown-item" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form>
                             </td>
                             <td id="coins-table-data-2">Name
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="nameUp" id="up-change" onClick={handleSort} checked={sort ==='nameUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="nameUp" id="up-change-name" onClick={handleSort} checked={sort ==='nameUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-name" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="nameDown" id="down-change" onClick={handleSort} checked={sort ==='nameDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="nameDown" id="down-change-name" onClick={handleSort} checked={sort ==='nameDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-name"><FontAwesomeIcon icon={faCaretDown}/></label>
                                     </div>
                             </form>
                             </td>
                             <td id="coins-table-data-3">Price
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="priceUp" id="up-change" onClick={handleSort} checked={sort ==='priceUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="priceUp" id="up-change-price" onClick={handleSort} checked={sort ==='priceUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-price" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="priceDown" id="down-change" onClick={handleSort} checked={sort ==='priceDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="priceDown" id="down-change-price" onClick={handleSort} checked={sort ==='priceDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-price"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form></td>
                             <td id="coins-table-data-4">Change
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="changeUp" id="up-change" onClick={handleSort} checked={sort ==='changeUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="changeUp" id="up-change-change" onClick={handleSort} checked={sort ==='changeUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="changeDown" id="down-change" onClick={handleSort} checked={sort ==='changeDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="changeDown" id="down-change-change" onClick={handleSort} checked={sort ==='changeDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-change"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form></td>
                             <td id="coins-table-data-5">Mcap
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="mcapUp" id="up-change" onClick={handleSort} checked={sort ==='mcapUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="mcapUp" id="up-change-mcap" onClick={handleSort} checked={sort ==='mcapUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-mcap" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="mcapDown" id="down-change" onClick={handleSort} checked={sort ==='mcapDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="mcapDown" id="down-change-mcap" onClick={handleSort} checked={sort ==='mcapDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-mcap"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form></td>
                             <td id="coins-table-data-6">Volume
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="volumeUp" id="up-change" onClick={handleSort} checked={sort ==='volumeUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="volumeUp" id="up-change-volume" onClick={handleSort} checked={sort ==='volumeUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-volume" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="volumeDown" id="down-change" onClick={handleSort} checked={sort ==='volumeDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="volumeDown" id="down-change-volume" onClick={handleSort} checked={sort ==='volumeDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-volume"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
                             </form></td>
-                            <td id="coins-table-data-7">Circulating Supply
-                            <form className="watchlist-upDown">
-                                <div className="watchlist-">
-                                    <input type="radio" name="supplyUp" id="up-change" onClick={handleSort} checked={sort ==='supplyUp'}/>
-                                    <label className="" htmlFor="up-change" ><FontAwesomeIcon  icon={faCaretUp}/></label>
+                            <td id="coins-table-data-7">Supply
+                            <form className="coins-upDown">
+                                <div className="coins-rank">
+                                    <input type="radio" name="supplyUp" id="up-change-supply" onClick={handleSort} checked={sort ==='supplyUp'}/>
+                                    <label className="coin-upDown-item" htmlFor="up-change-supply" ><FontAwesomeIcon  icon={faCaretUp}/></label>
                                 </div>
-                                <div className="watchlist-">
-                                    <input type="radio" name="supplyDown" id="down-change" onClick={handleSort} checked={sort ==='supplyDown'}/>
-                                    <label className="" htmlFor="down-change"><FontAwesomeIcon icon={faCaretDown}/></label>
+                                <div className="coins-rank">
+                                    <input type="radio" name="supplyDown" id="down-change-supply" onClick={handleSort} checked={sort ==='supplyDown'}/>
+                                    <label className="coin-upDown-item" htmlFor="down-change-supply"><FontAwesomeIcon icon={faCaretDown}/></label>
                                 </div>
-                            </form> </td>
+                            </form> 
+                            </td>
                         </tr>
                     </table>
                     <div className="coin-wrapper">
