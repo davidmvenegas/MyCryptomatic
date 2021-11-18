@@ -25,7 +25,7 @@
     background-color: #222;
     color: #fff;
     transition: background-color .2s ease;
-    box-shadow: .25rem .25rem .25rem black;
+    box-shadow: .15rem .15rem .25rem black;
 }
 .portfolio-button:hover {
     background-color: #444;

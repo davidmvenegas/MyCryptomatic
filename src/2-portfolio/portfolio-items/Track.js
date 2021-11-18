@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./track.css"
 import TrackItem from './TrackItem'
-import Option from './Option'
 
 function Track() {
     const [port, setPort] = useState([])
@@ -90,7 +89,7 @@ function Track() {
                         <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)}/>
                             <datalist id="cryptoTypeList" >
                         {cryptos.map((coin) => {
-                            return <Option key={coin.id} coin={coin}/>
+                            return <option key={coin.id} value={coin.name}>{coin.symbol}</option>
                         })} 
                             </datalist>
                         <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)}/>
