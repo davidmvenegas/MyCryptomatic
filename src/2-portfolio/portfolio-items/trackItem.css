@@ -30,12 +30,12 @@
     text-align: left;
 }
 .track-item-cost span {
-    font-size: 1rem;
+    font-size: .85rem;
     text-transform: uppercase;
     color: white;
 }
 .track-item-cost {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     color: gray;
 }
 .track-item-cur-price {
@@ -49,9 +49,10 @@
     flex: 12.5%;
 }
 .track-item-amount span {
-    color: #bbb;
-    font-size: 1.75rem;
+    color: #555;
+    font-size: 1.85rem;
     margin-left: .25rem;
+    font-weight: 900;
 }
 .track-item-change-container {
     display: flex;
@@ -92,7 +93,7 @@
 .track-item-btn-front:hover {
     border-style: inset;
     box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .8);
-    opacity: .8;
+    opacity: 1;
 }
 .track-item-btn-back {
     margin-left: -.5rem;
@@ -101,17 +102,17 @@
     outline: none;
     padding: 1rem;
     font-weight: 800;
-    background-color: red;
+    background-color: #777;
     opacity: .6;
     cursor: pointer;
-    border: .2rem outset #444;
+    border: .1rem outset #444;
     border-radius: .5rem;
     box-shadow: .25rem .25rem .25rem rgba(0, 0, 0, .8);
 }
 .track-item-btn-back:hover {
-    background-color: red;
     border-style: inset;
-    opacity: .8;
+    box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .8);
+    opacity: 1;
 }
 .track-item-remove {
     font-size: 2.5rem;
@@ -189,6 +190,7 @@
     box-shadow: .25rem .25rem .5rem rgba(0,0,0);
     text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
     background-color: red;
+
     border: none;
     border-radius: .5rem;
     transition: all .25s ease;
@@ -204,13 +206,14 @@
     width: 12.5rem;
     font-size: 1.45rem;
     font-weight: 800;
-    color: #ddd;
+    color: white;
     outline: none;
     text-align: center;
+    /* opacity: .6; */
     padding: 0 1rem;
     box-shadow: .25rem .25rem .5rem rgba(0,0,0);
     text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
-    background-color: red;
+    background-color: rgb(177, 48, 48);
     border: none;
     border-radius: .5rem;
     transition: all .25s ease;

@@ -59,7 +59,6 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
             headers:{
                 "Content-Type" : 'application/json'
             },
-            
             body: JSON.stringify({
                 shares : added
             })
@@ -90,7 +89,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
                         <h2 className="track-item-cur-price">${dynamicPrice===null? null : dynamicPrice.current_price.toLocaleString()}</h2>
                         <h2 className="track-item-cost"><span>Buy Price:</span> ${coin.entry.toLocaleString()}</h2>
                     </div>
-                    <h2 className="track-item-amount">{coin.shares.toLocaleString()}<span>{coin.symbol}</span></h2>
+                    <h2 className="track-item-amount">{coin.shares.toLocaleString()}<span>{coin.symbol.toUpperCase()}</span></h2>
                     <div className="track-item-change-container">
                         {(change > 0) ? <FontAwesomeIcon style={change < 0 ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowUp}/> : <FontAwesomeIcon style={change < 0 ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowDown}/>}
                         <h2 className="track-item-change" style={change < 0 ? {color : 'red'}: {color : 'green'}}>{change.toLocaleString()}%</h2>

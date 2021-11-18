@@ -79,7 +79,6 @@ function Track() {
         return previousValue + (currentValue.entry * currentValue.shares)
     }, 0)
 
-
     function handleDeletePortfolio (deletedItem) {
         const updatedPortfolio = port.filter((coin) => coin.id !== deletedItem.id)
         setPort(updatedPortfolio)
