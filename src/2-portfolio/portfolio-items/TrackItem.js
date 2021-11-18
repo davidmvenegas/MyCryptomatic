@@ -1,12 +1,18 @@
 import React from 'react'
 import './trackItem.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-// import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faXmark, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
-function TrackItem({coin}) {
+function TrackItem({coin, handleDeletePortfolio}) {
     const change= ((coin.current_price - coin.entry) / coin.entry)*100
+    function handleClick() {
+        fetch(`http://localhost:3001/portfolio/${coin.id}`, {
+            method: "DELETE",
+        })
+        .then(r=>r.json())
+        .then(() => 
+        handleDeletePortfolio(coin))
+}
     return (
         <div>
             <div className="track-item">
@@ -20,10 +26,10 @@ function TrackItem({coin}) {
                 </div>
                 <h2 className="track-item-amount">{coin.shares.toLocaleString()}<span>BTC</span></h2>
                 <div className="track-item-change-container">
-                    <FontAwesomeIcon className="track-item-arrow" icon={faArrowUp}/>
+                    {(change > 0) ? <FontAwesomeIcon style={change < 0 ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowUp}/> : <FontAwesomeIcon style={change < 0 ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowDown}/>}
                     <h2 className="track-item-change" style={change < 0 ? {color : 'red'}: {color : 'green'}}>{change.toFixed(2)}%</h2>
                 </div>
-                <FontAwesomeIcon className="track-item-remove" icon={faXmark}/>
+                <FontAwesomeIcon onClick={handleClick} className="track-item-remove" icon={faXmark}/>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./watchlist.css"
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
@@ -24,6 +25,7 @@ function handleNewClick(e){
             <div className="watchlist-container">
                 <div className="watchlist">
                     <div className="watchlist-top">
+                        <Link to="/markets"><button className="watchlist-toMarket-button">Discover</button></Link>
                         <h2 className="watchlist-top-count-title">Items in Watchlist: <span className="watchlist-top-count">{watchlist.length}</span></h2>
                         <div className="watchlist-sort-container">
                             <h2 className="watchlist-sort-title">Sort By:</h2>
@@ -53,7 +55,6 @@ function handleNewClick(e){
                             </form>
                         </div>
                     </div>
-                    <div className="watchlist-seperator"></div>
                     <div className="watchlist-contents">
                         {watchlist.map((c) => {
                             return <WatchlistItem handleDelete={handleDelete} key={c.id} c={c}/>

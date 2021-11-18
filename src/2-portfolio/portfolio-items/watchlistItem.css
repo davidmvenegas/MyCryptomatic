@@ -12,23 +12,23 @@
     height: 3.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 1rem 0;
 }
 .watchlist-rank {
-    margin-left: 3.25rem;
-    margin-right: -3.25rem;
     font-size: 2.25rem;
     font-weight: 900;
     color: #687588;
+}
+.watchlist-rank span {
+    font-size: 2rem;
+    padding-right: .1rem;
 }
 .watchlist-image {
     height: 3.25rem;
     width: 3.25rem;
     margin-top: .15rem;
     margin-bottom: -.15rem;
-    margin-left: -2.25rem;
-    margin-right: 2.25rem;
 }
 .watchlist-name-container {
     margin-top: .25rem;
@@ -36,8 +36,6 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-left: -10.75rem;
-    margin-right: 10.75rem;
 }
 .watchlist-name {
     color: #fff;
@@ -50,12 +48,12 @@
     font-size: 1.075rem;
     margin-left: .1rem;
     color: #bbb;
+    text-transform: uppercase;
+    padding-top: .1rem;
 }
 .watchlist-price {
     color: white;
     font-size: 2.25rem;
-    margin-left: -10rem;
-    margin-right: 10rem;
 }
 .watchlist-price span {
     color: #687588;
@@ -64,15 +62,12 @@
 }
 .watchlist-change {
     color: #ddd;
-    font-size: 2.25rem;
-    margin-left: -7rem;
-    margin-right: 7rem;
+    font-size: 2.35rem;
+    font-weight: bold;
 }
 .watchlist-remove {
     color: #999;
     font-size: 2.25rem;
-    margin-left: -3.5rem;
-    margin-right: 4rem;
     transition: transform .15s ease;
 }
 .watchlist-remove:hover {
@@ -81,4 +76,23 @@
 }
 .watchlist-remove:active {
     color: red;
+}
+.watchlist-item-1 {
+    flex: 10%;
+}
+.watchlist-item-2 {
+    flex: 10%;
+}
+.watchlist-item-3 {
+    flex: 30%;
+}
+.watchlist-item-4 {
+    flex: 20%;
+    text-align: left;
+}
+.watchlist-item-5 {
+    flex: 20%;
+}
+.watchlist-item-6 {
+    flex: 10%;
 }

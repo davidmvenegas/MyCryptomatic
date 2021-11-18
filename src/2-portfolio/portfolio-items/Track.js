@@ -32,10 +32,8 @@ function Track() {
             console.error(err);
         });
     }, [])
-    
 
     //the problem is that I cant access my coin from the Track component so we can refactor our input
-    
     
     function addPurchase(e) {
         const coin = cryptos.find((c) => c.name===selectedCoin)
@@ -70,6 +68,11 @@ function Track() {
     console.log(value)
     console.log(cost)
 
+    function handleDeletePortfolio (deletedItem) {
+        const updatedPortfolio = port.filter((coin) => coin.id !== deletedItem.id)
+        setPort(updatedPortfolio)
+    }
+
     return (
         <div className="track-container">
             <div className="track">
@@ -84,22 +87,21 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)}/>
+                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)}/>
                             <datalist id="cryptoTypeList" >
                         {cryptos.map((coin) => {
                             return <Option key={coin.id} coin={coin}/>
                         })} 
                             </datalist>
-                        <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount Of Shares..." onChange={(e) => setShares(e.target.value)}/>
-                        <input type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." onChange={(e) => setEntry(e.target.value)}/>
-                        <input type="submit" value="Add" />
-
+                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)}/>
+                        <input className="track-crypto-amount" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)}/>
+                        <input className="track-submit" type="submit" value="Add" />
                     </form>
                 </div>
                 <div className="track-separator-2"></div>
                 <div className="track-item-container">
                     {port.map((coin) => {
-                        return <TrackItem key={coin.id} coin={coin}/>
+                        return <TrackItem key={coin.id} coin={coin} handleDeletePortfolio={handleDeletePortfolio}/>
                     })}
                 </div>
             </div>

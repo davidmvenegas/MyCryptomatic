@@ -21,7 +21,7 @@ function App() {
     .then((coins) => setWatchlist(coins))
   }, [])
   function handleAddWatchlist (newItem) {
-    setWatchlist([...watchlist,newItem])
+    setWatchlist([...watchlist, newItem])
   }
   function handleDeleteWatchlist (deletedItem) {
     const updatedWatchlist = watchlist.filter((crypto) => crypto.id !== deletedItem.id)

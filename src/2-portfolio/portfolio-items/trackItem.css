@@ -6,23 +6,27 @@
     flex-direction: row;
     border-radius: .5rem;
     background-color: rgba(0, 0, 0, .2);
-    width: 50vw;
-    height: 5rem;
+    width: 55vw;
+    height: 6rem;
     margin: 1rem 0;
 }
 .track-item-name-container {
     margin-right: -1.5rem;
     margin-left: 1.5rem;
+    flex: 23.5%;
 }
 .track-item-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 .track-item-symbol {
     font-size: 1.15rem;
+    text-transform: uppercase;
 }
 .track-item-cost-container {
     margin-right: -.5rem;
     margin-left: .5rem;
+    flex: 20%;
+    text-align: left;
 }
 .track-item-cost span {
     font-size: 1rem;
@@ -41,6 +45,7 @@
     font-size: 2.5rem;
     margin-right: 1rem;
     margin-left: -1rem;
+    flex: 15%;
 }
 .track-item-amount span {
     color: #bbb;
@@ -50,8 +55,9 @@
 .track-item-change-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     flex-direction: row;
+    flex: 17.5%;
 }
 .track-item-arrow {
     font-size: 2rem;
@@ -67,6 +73,7 @@
     font-size: 2.5rem;
     color: #ddd;
     transition: transform .15s ease;
+    flex: 2.5%;
 }
 .track-item-remove:hover {
     transform: scale(1.2);
