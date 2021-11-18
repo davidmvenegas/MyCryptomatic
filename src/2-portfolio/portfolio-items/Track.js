@@ -103,14 +103,14 @@ function Track() {
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">
                     <form className="track-form" onSubmit={addPurchase}>
-                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)} value={selectedCoin}/>
+                        <input className="track-crypto-type" list="cryptoTypeList" name="cryptoType" id="cryptoType" placeholder="Select Cryptocurrency..." autoComplete="off" onChange={(e) =>setSelectedCoin(e.target.value)} value={selectedCoin} required />
                             <datalist id="cryptoTypeList" >
                         {cryptos.map((coin) => {
                             return <option key={coin.id} value={coin.name}>{coin.symbol.toUpperCase()}</option>
                         })} 
                             </datalist>
-                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)} value={shares}/>
-                        <input className="track-crypto-price" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)} value={entry}/>
+                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)} value={shares} required />
+                        <input className="track-crypto-price" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)} value={entry} required />
                         <input className="track-submit" type="submit" value="Add" />
                     </form>
                 </div>
