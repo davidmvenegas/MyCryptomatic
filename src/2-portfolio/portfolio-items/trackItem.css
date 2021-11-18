@@ -21,6 +21,7 @@
 .track-item-symbol {
     font-size: 1.15rem;
     text-transform: uppercase;
+    margin-left: .1rem;
 }
 .track-item-cost-container {
     margin-right: -2.75rem;

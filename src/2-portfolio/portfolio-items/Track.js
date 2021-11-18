@@ -6,8 +6,8 @@ function Track() {
     const [port, setPort] = useState([])
     const [cryptos, setCryptos] = useState([])  
     const[selectedCoin, setSelectedCoin]=useState([])
-    const[shares, setShares] = useState('Amount...')
-    const[entry, setEntry] = useState('Entry Price...')
+    const[shares, setShares] = useState('$ Amount...')
+    const[entry, setEntry] = useState([])
 
 //fetchinng our crypto data to render in our list and fetching our json portfolio data and setting bothn to a state
     useEffect(() => {
@@ -96,7 +96,7 @@ function Track() {
                             return <option key={coin.id} value={coin.name}>{coin.symbol}</option>
                         })} 
                             </datalist>
-                        <input className="track-crypto-amount" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)} value={entry}/>
+                        <input className="track-crypto-price" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)} value={entry}/>
                         <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)} value={shares}/>
                         <input className="track-submit" type="submit" value="Add" />
                     </form>

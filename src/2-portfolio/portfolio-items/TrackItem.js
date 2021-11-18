@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './trackItem.css'
 import ReactCardFlip from 'react-card-flip';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faXmark, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function TrackItem({coin, handleDeletePortfolio}) {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -41,10 +41,12 @@ function TrackItem({coin, handleDeletePortfolio}) {
                     <button className="track-item-btn-front" onClick={handleFlip}>EDIT</button>
                 </div>
                 <div className="track-item">
+                    <p className="track-item-symbol">{coin.name}</p>
                     <form>
-                        <input type="number" step=".00001" />
+                        <input type="number" step=".00001" max={coin.shares} placeholder={"0 " + coin.symbol.toUpperCase()} />
+                        <input type="submit" value="Remove" />
                     </form>
-                    <FontAwesomeIcon onClick={handleClick} className="track-item-remove" icon={faXmark}/>
+                    <button onClick={handleClick}>Remove All</button>
                     <button className="track-item-btn-back" onClick={handleFlip}>CANCEL</button>
                 </div>
             </ReactCardFlip>
