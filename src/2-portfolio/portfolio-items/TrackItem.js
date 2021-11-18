@@ -43,7 +43,8 @@ function TrackItem({coin, handleDeletePortfolio}) {
                 <div className="track-item">
                     <form className="track-update-form-1">
                         <input className="track-item-update-input" type="number" step=".00001" max={coin.shares} placeholder={"0 " + coin.symbol.toUpperCase()} />
-                        <input className="track-item-update-btn" type="submit" value="Remove" />
+                        <input className="track-item-update-remove-btn" type="submit" value="Remove" />
+                        <input className="track-item-update-add-btn" type="submit" value="Add" />
                     </form>
                     <div className="track-update-form-2">
                         <div className="track-update-form-separator"></div>

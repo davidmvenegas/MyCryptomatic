@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./track.css"
+import { Bar } from 'react-chartjs-2'
 import TrackItem from './TrackItem'
 
 function Track() {
@@ -80,6 +81,18 @@ function Track() {
         <div className="track-container">
             <div className="track">
                 <div className="track-info-container">
+                        <div>
+                            {/* <Bar
+                            data={{
+                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                            }}
+                                height={400}
+                                width={600}
+                                options={{
+                                    maintainAspectRatio: false
+                                }}
+                            /> */}
+                        </div>
                     <div className="track-info">
                         <h1>${value.toLocaleString()}</h1>
                         <h1>DAY_GAIN</h1>

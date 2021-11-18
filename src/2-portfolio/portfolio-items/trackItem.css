@@ -95,8 +95,8 @@
     opacity: .8;
 }
 .track-item-btn-back {
-    margin-left: 1rem;
-    margin-right: -1rem;
+    margin-left: -.5rem;
+    margin-right: .5rem;
     letter-spacing: .025rem;
     outline: none;
     padding: .75rem 1rem;
@@ -132,7 +132,7 @@
     margin-right: -1.5rem;
     position: relative;
     height: 3.75rem;
-    width: 25rem;
+    width: 27.5rem;
     font-weight: 600;
     font-size: 2.25rem;
     outline: none;
@@ -151,12 +151,36 @@
 .track-item-update-input:focus {
     background-color: white;
 }
-.track-item-update-btn {
-    margin-left: -3rem;
-    margin-right: 3rem;
-    height: 3.75rem;
-    width: 9.25rem;
+.track-item-update-add-btn {
+    margin-left: .75rem;
+    margin-right: -.75rem;
+    height: 3.5rem;
+    width: 8rem;
     font-size: 1.5rem;
+    font-weight: 800;
+    color: #ddd;
+    outline: none;
+    text-align: center;
+    padding: 0 1rem;
+    box-shadow: .25rem .25rem .5rem rgba(0,0,0);
+    text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
+    background-color: green;
+    border: none;
+    border-radius: .5rem;
+    transition: all .25s ease;
+    text-transform: uppercase;
+}
+.track-item-update-add-btn:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
+}
+.track-item-update-remove-btn {
+    margin-left: 1.65rem;
+    margin-right: -1.65rem;
+    height: 3.5rem;
+    width: 8rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #ddd;
     outline: none;
@@ -170,7 +194,7 @@
     transition: all .25s ease;
     text-transform: uppercase;
 }
-.track-item-update-btn:hover {
+.track-item-update-remove-btn:hover {
     cursor: pointer;
     transform: scale(1.025);
     box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
@@ -204,18 +228,18 @@
     background-color: #777;
 }
 .track-update-form-1 {
-    margin-left: 1rem;
-    margin-right: -1rem;
-    flex: 50%;
+    margin-left: -2rem;
+    margin-right: 2rem;
+    flex: 60%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* border: 1px solid red; */
 }
 .track-update-form-2 {
-    margin-left: -1.5rem;
-    margin-right: 1.5rem;
-    flex: 10%;
+    margin-left: 1.5rem;
+    margin-right: -1.5rem;
+    flex: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,9 +247,9 @@
 
 }
 .track-update-form-3 {
-    flex: 17.5%;
-    margin-left: -3.25rem;
-    margin-right: 3.25rem;
+    flex: 25%;
+    margin-left: -.5rem;
+    margin-right: .5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,7 +257,7 @@
 
 }
 .track-update-form-4 {
-    flex: 11.5%;
+    flex: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
