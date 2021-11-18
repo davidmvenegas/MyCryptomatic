@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 function WatchlistItem({c, handleDelete, }) {
     function handleClick() {
-                fetch(`http://localhost:3000/cryptos/${c.id}`, {
+                fetch(`http://localhost:3001/cryptos/${c.id}`, {
                     method: "DELETE",
                 })
                 .then(r=>r.json())

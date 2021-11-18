@@ -25,7 +25,7 @@ function Track() {
             console.error(err);
         });
         
-        fetch('http://localhost:3000/portfolio')
+        fetch('http://localhost:3001/portfolio')
         .then(r => r.json())
         .then((data) => setPort(data))
         .catch(err => {
@@ -43,7 +43,7 @@ function Track() {
         coin.entry=entry
         console.log(coin)
         e.preventDefault()
-        fetch('http://localhost:3000/portfolio', {
+        fetch('http://localhost:3001/portfolio', {
             method: 'POST',
             headers:{
                 "Content-Type" : 'application/json'
@@ -63,6 +63,7 @@ function Track() {
     let cost = port===[] ? null : port.reduce(function (previousValue, currentValue) {
         return previousValue + (currentValue.entry * currentValue.shares)
     }, 0)
+    // eslint-disable-next-line
     let gain = port===[] ? null : port.reduce(function (previousValue, currentValue) {
         return previousValue + (currentValue.entry * currentValue.shares)
     }, 0)
