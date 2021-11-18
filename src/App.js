@@ -9,10 +9,12 @@ import News from "./4-news/News"
 import Account from "./5-account/Account"
 import Footer from "./header|footer/Footer"
 import { useState, useEffect } from "react/cjs/react.development";
+
 function App() {
   const[watchlist, setWatchlist] = useState([])
   const[sortby, setSortby] = useState('rank')
   const[up, setUp]=useState(true)
+  
   useEffect(() => {
     fetch('http://localhost:3000/cryptos')
     .then(r=>r.json())
