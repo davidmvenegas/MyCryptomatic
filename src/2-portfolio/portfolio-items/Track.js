@@ -7,7 +7,8 @@ function Track() {
     const [port, setPort] = useState([])
     const [cryptos, setCryptos] = useState([])  
     const[selectedCoin, setSelectedCoin]=useState([])
-    const[amount, setAmount] = useState(0)
+    const[shares, setShares] = useState(0)
+    const[entry, setEntry] = useState(0)
 
 //fetchinng our crypto data to render in our list and fetching our json portfolio data and setting bothn to a state
     useEffect(() => {
@@ -38,7 +39,8 @@ function Track() {
     
     function addPurchase(e) {
         const coin = cryptos.find((c) => c.name===selectedCoin)
-        coin.amount=amount
+        coin.shares=shares
+        coin.entry=entry
         console.log(coin)
         e.preventDefault()
         fetch('http://localhost:3000/portfolio', {
@@ -55,15 +57,26 @@ function Track() {
             console.error(err);
         });
     }
-    
+    let value = port===[] ? null : port.reduce(function (previousValue, currentValue) {
+        return previousValue + (currentValue.current_price *currentValue.shares)
+    }, 0)
+    let cost = port===[] ? null : port.reduce(function (previousValue, currentValue) {
+        return previousValue + (currentValue.entry * currentValue.shares)
+    }, 0)
+    let gain = port===[] ? null : port.reduce(function (previousValue, currentValue) {
+        return previousValue + (currentValue.entry * currentValue.shares)
+    }, 0)
+    console.log(value)
+    console.log(cost)
+
     return (
         <div className="track-container">
             <div className="track">
                 <div className="track-info-container">
                     <div className="track-info">
-                        <h1>VALUE</h1>
+                        <h1>${value.toLocaleString()}</h1>
                         <h1>DAY_GAIN</h1>
-                        <h1>COST</h1>
+                        <h1>${cost.toLocaleString()}</h1>
                         <h1>TOTAL_GAIN</h1>
                     </div>
                 </div>
@@ -76,7 +89,8 @@ function Track() {
                             return <Option key={coin.id} coin={coin}/>
                         })} 
                             </datalist>
-                        <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." onChange={(e) => setAmount(e.target.value)}/>
+                        <input type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount Of Shares..." onChange={(e) => setShares(e.target.value)}/>
+                        <input type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." onChange={(e) => setEntry(e.target.value)}/>
                         <input type="submit" value="Add" />
                     </form>
                 </div>
