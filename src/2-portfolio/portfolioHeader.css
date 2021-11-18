@@ -15,12 +15,12 @@
     border: .2rem solid #111;
     border-radius: 1rem;
     width: 38.5vw;
-    margin: 1.25rem 2.5rem .25rem;
+    margin: 1rem 2.5rem .25rem;
     text-transform: uppercase;
     background-color: #333;
     color: #fff;
     transition: background-color .2s ease;
-    box-shadow: .25rem .25rem .25rem black;
+    box-shadow: .15rem .15rem .15rem rgba(0, 0, 0, .4);
 }
 .portfolio-button:hover {
     background-color: #444;

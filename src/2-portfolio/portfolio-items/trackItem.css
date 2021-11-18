@@ -99,7 +99,7 @@
     margin-right: .5rem;
     letter-spacing: .025rem;
     outline: none;
-    padding: .75rem 1rem;
+    padding: 1rem;
     font-weight: 800;
     background-color: red;
     opacity: .6;
@@ -200,7 +200,7 @@
     box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
 }
 .track-item-delete-btn {
-    height: 4.75rem;
+    height: 4rem;
     width: 12.5rem;
     font-size: 1.45rem;
     font-weight: 800;
@@ -225,7 +225,7 @@
     height: 7.5vh;
     width: .35rem;
     border-radius: 5rem;
-    background-color: #777;
+    background-color: #888;
 }
 .track-update-form-1 {
     margin-left: -2rem;
@@ -234,7 +234,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
 .track-update-form-2 {
     margin-left: 1.5rem;
@@ -243,8 +242,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
-
 }
 .track-update-form-3 {
     flex: 25%;
@@ -253,14 +250,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
-
 }
 .track-update-form-4 {
     flex: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
-
 }
