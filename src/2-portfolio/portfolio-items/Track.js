@@ -92,8 +92,8 @@ function Track() {
                             return <option key={coin.id} value={coin.name}>{coin.symbol}</option>
                         })} 
                             </datalist>
-                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)}/>
                         <input className="track-crypto-amount" type="number" name="cryptoPrice" id="cryptoAmount" placeholder="Entry Price..." step="0.000001" onChange={(e) => setEntry(e.target.value)}/>
+                        <input className="track-crypto-amount" type="number" name="cryptoAmount" id="cryptoAmount" placeholder="Amount..." step="0.000001" onChange={(e) => setShares(e.target.value)}/>
                         <input className="track-submit" type="submit" value="Add" />
                     </form>
                 </div>
