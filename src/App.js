@@ -14,6 +14,7 @@ function App() {
   const[watchlist, setWatchlist] = useState([])
   const[sortby, setSortby] = useState('rank')
   const[up, setUp]=useState(true)
+  
   useEffect(() => {
     fetch('http://localhost:3000/cryptos')
     .then(r=>r.json())
