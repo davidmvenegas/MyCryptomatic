@@ -54,15 +54,17 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 60vw;
+    width: 62.5vw;
+    margin-right: 1.25rem;
 }
 .track-crypto-type {
-    height: 4.25rem;
-    width: 30rem;
+    height: 5rem;
+    width: 32.5rem;
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #bbb;
+    background-color: #111;
+    color: white;
     border: none;
     font-weight: 600;
     border-radius: .25rem;
@@ -70,65 +72,73 @@
     box-shadow: .25rem .25rem .75rem rgba(0,0,0);
 }
 .track-crypto-type::placeholder {
-    color: #555;
+    color: white;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: -.1rem;
 }
 .track-crypto-type:focus {
     background-color: white;
+    color: black;
+}
+.track-crypto-type:checked {
+    color: red;
 }
 .track-crypto-amount {
     position: relative;
     margin-left: -1rem;
     margin-right: 1rem;
-    height: 4.25rem;
-    width: 13.5rem;
+    height: 5rem;
+    width: 10rem;
     font-weight: 600;
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #bbb;
+    background-color: #111;
+    color: white;
     border: none;
     border-radius: .25rem;
     box-shadow: .25rem .25rem .75rem rgba(0,0,0);
 }
 .track-crypto-amount::placeholder {
-    color: #555;
+    color: #fff;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: -.1rem;
 }
 .track-crypto-amount:focus {
     background-color: white;
+    color: black;
 }
 .track-crypto-price {
     margin-left: -1rem;
     margin-right: 1rem;
-    height: 4.25rem;
-    width: 13.5rem;
+    height: 5rem;
+    width: 20rem;
     font-weight: 600;
     font-size: 2.25rem;
     outline: none;
     padding: 0 1.5rem;
-    background-color: #bbb;
+    background-color: #111;
+    color: white;
     border: none;
     border-radius: .25rem;
     box-shadow: .25rem .25rem .75rem rgba(0,0,0);
 }
 .track-crypto-price::placeholder {
-    color: #555;
+    color: #fff;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: -.1rem;
 }
 .track-crypto-price:focus {
     background-color: white;
+    color: black;
 }
 .track-submit {
-    height: 4.25rem;
-    width: 7.5rem;
-    font-size: 1.9rem;
+    height: 5rem;
+    width: 10rem;
+    font-size: 2rem;
     font-weight: 800;
     color: white;
     outline: none;
@@ -136,15 +146,17 @@
     padding: 0 1.5rem;
     box-shadow: .25rem .25rem .5rem rgba(0,0,0);
     text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
-    background-color: green;
+    background-color: darkgreen;
+    margin-left: 1rem;
+    margin-right: -1rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: .5rem;
     transition: all .25s ease;
     text-transform: uppercase;
 }
 .track-submit:hover {
     cursor: pointer;
-    transform: scale(1.085);
+    transform: scale(1.05);
     box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
 }
 .track-separator-2 {

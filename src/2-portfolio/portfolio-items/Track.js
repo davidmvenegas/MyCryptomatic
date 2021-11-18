@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./track.css"
-import { Bar } from 'react-chartjs-2'
+// import { Bar } from 'react-chartjs-2'
 import TrackItem from './TrackItem'
 
 function Track() {
