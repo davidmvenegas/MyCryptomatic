@@ -18,7 +18,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         .then(() => 
         handleDeletePortfolio(coin))
     }
-    const dynamicPrice= cryptos.length>1 ? cryptos.find((c) => c.id ===coin.id) : null
+    const dynamicPrice= cryptos.length > 1 ? cryptos.find((c) => c.id ===coin.id) : null
     console.log(dynamicPrice)
 
 

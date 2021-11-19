@@ -7,7 +7,7 @@
 .watchlist {
     margin: 2.5rem 0;
     border: .5rem solid #111;
-    background: linear-gradient(0deg, rgba(25,25,25,1) 25%, rgba(25,25,25,0.5) 50%, rgba(25,25,25,0.25) 75%, rgba(25,25,25,0.1) 100%);
+    background: linear-gradient(0deg, rgba(25,25,25,.75) 25%, rgba(25,25,25,0.25) 50%, rgba(25,25,25,0.1) 75%, rgba(25,25,25,0.075) 100%);
     width: 80vw;
     text-align: center;
     border-radius: .5rem;
@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.4);
 }
 .watchlist-top {
     width: 80vw;
@@ -136,8 +137,8 @@
 }
 .watchlist-toMarket-button {
     text-align: center;
-    width: 12.5rem;
-    height: 5rem;
+    width: 12rem;
+    height: 4.65rem;
     border-radius: 1rem;
     font-size: 1.5rem;
     font-weight: 700;

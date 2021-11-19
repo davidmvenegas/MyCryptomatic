@@ -9,11 +9,11 @@
     border-radius: 1rem;
     padding: 1.35rem;
     width: 52.5vw;
-    height: 3.5rem;
+    height: 4.5rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: 1rem 0;
+    margin: 1.15rem 0;
 }
 .watchlist-rank {
     font-size: 2.25rem;
