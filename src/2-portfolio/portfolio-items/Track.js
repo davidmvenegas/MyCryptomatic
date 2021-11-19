@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import "./track.css"
 // import { Bar } from 'react-chartjs-2'
 import TrackItem from './TrackItem'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Track() {
     const [port, setPort] = useState([])
@@ -88,24 +90,16 @@ function Track() {
         <div className="track-container">
             <div className="track">
                 <div className="track-info-container">
-                        <div>
-                            {/* <Bar
-                            data={{
-                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                            }}
-                                height={400}
-                                width={600}
-                                options={{
-                                    maintainAspectRatio: false
-                                }}
-                            /> */}
-                        </div>
-                    <div className="track-info">
-                        <h1>${value.toLocaleString()}</h1>
-                        <h1>DAY_GAIN</h1>
-                        <h1>${cost.toLocaleString()}</h1>
-                        <h1>TOTAL_GAIN</h1>
+                    <div className="track-info-1">
+                        <h1 className="track-info-1-title" data-text="Total Cost:">Total Cost <span>:</span></h1>
+                        <h1 className="track-info-1-title">Total Value <span>:</span></h1>
+                        <h1 className="track-info-1-cost"><span>$</span>{cost.toLocaleString()}</h1>
+                        <h1 className="track-info-1-value" style={(value < cost) ? {color : 'red'} : {color : 'green'}}><span>$</span>{value.toLocaleString()}</h1>
                     </div>
+                    <div className="track-info-2">
+                        {/* {(value > cost) ? <FontAwesomeIcon style={value < cost ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowUp}/> : <FontAwesomeIcon style={value < cost ? {color : 'red'}: {color : 'green'}} className="track-item-arrow" icon={faArrowDown}/>} */}
+                    </div>
+                    <div className="track-info-3"></div>
                 </div>
                 <div className="track-separator-1"></div>
                 <div className="track-form-container">

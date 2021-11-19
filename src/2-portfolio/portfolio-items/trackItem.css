@@ -13,7 +13,7 @@
 .track-item-name-container {
     margin-right: -1.5rem;
     margin-left: 1.5rem;
-    flex: 22.5%;
+    flex: 18.5%;
 }
 .track-item-name {
     font-size: 2.5rem;
@@ -24,8 +24,8 @@
     margin-left: .1rem;
 }
 .track-item-cost-container {
-    margin-right: -2.75rem;
-    margin-left: 2.75rem;
+    margin-right: -3rem;
+    margin-left: 3rem;
     flex: 25%;
     text-align: left;
 }
@@ -39,13 +39,13 @@
     color: gray;
 }
 .track-item-cur-price {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     color: #fff;
 }
 .track-item-amount {
     font-size: 2.5rem;
-    margin-right: 1.5rem;
-    margin-left: -1.5rem;
+    margin-right: 2rem;
+    margin-left: -2rem;
     flex: 12.5%;
 }
 .track-item-amount span {
@@ -206,13 +206,13 @@
     width: 12.5rem;
     font-size: 1.45rem;
     font-weight: 800;
-    color: white;
+    color: #151515;
     outline: none;
     text-align: center;
     /* opacity: .6; */
     padding: 0 1rem;
     box-shadow: .25rem .25rem .5rem rgba(0,0,0);
-    text-shadow: .1rem .1rem .25rem rgba(0,0,0,.25);
+    text-shadow: .1rem .1rem .25rem rgba(0,0,0,.15);
     background-color: rgb(177, 48, 48);
     border: none;
     border-radius: .5rem;
@@ -225,7 +225,7 @@
     box-shadow: .175rem .175rem 1.25rem rgba(0,0,0,.6);
 }
 .track-update-form-separator {
-    height: 7.5vh;
+    height: 7vh;
     width: .35rem;
     border-radius: 5rem;
     background-color: #888;
