@@ -1,11 +1,11 @@
 .watchlist-container {
-    min-height: 46.85vh;
+    min-height: 60vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 .watchlist {
-    margin: 2.5rem 0;
+    margin: 3rem 0;
     border: .5rem solid #111;
     background: linear-gradient(0deg, rgba(25,25,25,.75) 25%, rgba(25,25,25,0.25) 50%, rgba(25,25,25,0.1) 75%, rgba(25,25,25,0.075) 100%);
     width: 80vw;

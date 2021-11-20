@@ -5,21 +5,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import WatchlistItem from './WatchlistItem'
-function Watchlist({watchlist , sortby, setSortby, handleDelete, up, setUp}) {
-function handleClick (e) {
-    setSortby(e.target.value)
-}
-function handleNewClick(e){
-    if (e.target.name === 'up' && up===true) {
-        return setUp(up)
+
+function Watchlist({ watchlist, sortby, setSortby, handleDelete, up, setUp}) {
+
+    function handleClick (e) {
+        setSortby(e.target.value)
     }
-    else if (e.target.name === 'down' && up===false) {
-        return setUp(up)
+    function handleNewClick(e){
+        if (e.target.name === 'up' && up===true) {
+            return setUp(up)
+        }
+        else if (e.target.name === 'down' && up===false) {
+            return setUp(up)
+        }
+        else {
+            return setUp(!up)
+        }
     }
-    else {
-        return setUp(!up)
-    }
-}
     return (
         <div>
             <div className="watchlist-container">

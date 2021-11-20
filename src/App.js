@@ -3,8 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./header|footer/Header"
 import Home from "./0-home/Home";
 import Markets from "./1-markets/Markets";
-import Portfolio from "./2-portfolio/Portfolio"
-import TradingBot from "./3-tradingBot/TradingBot"
+import Watchlist from "./2-watchlist/Watchlist"
+import Track from "./3-portfolio/Track"
 import News from "./4-news/News"
 import Account from "./5-account/Account"
 import Footer from "./header|footer/Footer"
@@ -64,8 +64,8 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>} />
             <Route path="/markets" element={<Markets watchlist={visibleWatchlist} onWatchlist={handleAddWatchlist} onDeleteWatchlist={handleDeleteWatchlist}/>} />
-            <Route path="/portfolio/*" element={<Portfolio up={up} setUp={setUp} handleDelete={handleDelete} sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
-            <Route path="/tradingBot" element={<TradingBot/>} />
+            <Route path="/watchlist" element={<Watchlist up={up} setUp={setUp} handleDelete={handleDelete} sortby={sortby} setSortby={setSortby} watchlist={watchlist}/>} />
+            <Route path="/portfolio" element={<Track/>} />
             <Route path="/news" element={<News/>} />
             <Route path="/account" element={<Account/>} />
           </Routes>

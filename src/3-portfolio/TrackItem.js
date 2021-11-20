@@ -76,9 +76,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
 
     function handleEdit(e) {
         setType(e.target.name)
-        // if ((coin.shares <= edit) || (0.00001 >= edit)) {
-        //     setIsFlipped(!isFlipped)
-        // }
+        setIsFlipped(!isFlipped)
     }
     return (
         <div>
@@ -101,7 +99,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
                 </div>
                 <div className="track-item">
                     <form className="track-update-form-1" onSubmit={handleSubmit} >
-                        <input className="track-item-update-input" type="number" step=".00001" min="0.00001" max={coin.shares <= edit && type==='remove'? coin.shares-1 : null} placeholder={"0 " + coin.symbol.toUpperCase()} onChange={(e) => setEdit(parseInt(e.target.value))}/>
+                        <input className="track-item-update-input" type="number" step="1" min="1" max={coin.shares <= edit && type==='remove'? coin.shares-1 : null} placeholder={"0 " + coin.symbol.toUpperCase()} onChange={(e) => setEdit(parseInt(e.target.value))}/>
                         <button className="track-item-update-remove-btn" type="submit" name='remove' onClick={handleEdit}>Remove</button>
                         <button className="track-item-update-add-btn" type="submit" name='add' onClick={handleEdit}>Add</button>
                     </form>
