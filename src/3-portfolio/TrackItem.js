@@ -11,7 +11,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
     const[type, setType]=useState('')
 
     function handleClick() {
-        fetch(`http://localhost:3001/portfolio/${coin.id}`, {
+        fetch(`https://cryptomatic-app-json.herokuapp.com/portfolio/${coin.id}`, {
             method: "DELETE",
         })
         .then(r=>r.json())
@@ -34,7 +34,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         console.log(removed)
         console.log(type)
         type==='remove'?
-        fetch(`http://localhost:3001/portfolio/${coin.id}`, {
+        fetch(`https://cryptomatic-app-json.herokuapp.com/portfolio/${coin.id}`, {
             method: 'PATCH',
             headers:{
                 "Content-Type" : 'application/json'
@@ -54,7 +54,7 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
             console.error(err);
         })
         :
-        fetch(`http://localhost:3001/portfolio/${coin.id}`, {
+        fetch(`https://cryptomatic-app-json.herokuapp.com/portfolio/${coin.id}`, {
             method: 'PATCH',
             headers:{
                 "Content-Type" : 'application/json'

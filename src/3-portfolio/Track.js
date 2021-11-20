@@ -27,7 +27,7 @@ function Track() {
             console.error(err);
         });
         
-        fetch('http://localhost:3001/portfolio')
+        fetch('https://cryptomatic-app-json.herokuapp.com/portfolio')
         .then(r => r.json())
         .then((data) => setPort(data))
         .catch(err => {
@@ -43,7 +43,7 @@ function Track() {
         coin.entry= parseFloat(entry)
         console.log(coin)
         e.preventDefault()
-        fetch('http://localhost:3001/portfolio', {
+        fetch('https://cryptomatic-app-json.herokuapp.com/portfolio', {
             method: 'POST',
             headers:{
                 "Content-Type" : 'application/json'

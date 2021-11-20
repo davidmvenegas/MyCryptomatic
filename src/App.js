@@ -16,7 +16,7 @@ function App() {
   const[up, setUp]=useState(true)
   
   useEffect(() => {
-    fetch('http://localhost:3001/cryptos')
+    fetch('https://cryptomatic-app-json.herokuapp.com/cryptos')
     .then(r=>r.json())
     .then((coins) => setWatchlist(coins))
   }, [])
