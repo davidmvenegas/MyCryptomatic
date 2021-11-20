@@ -8,7 +8,7 @@ function Home() {
             <div className="home-container">
                 <div className="home-text-container">
                     <h1 className="home-header">CRYPTOMATIC</h1>
-                    <h3 className="home-description">Track the Markets - Follow the News - Monitor your Portfolio</h3>
+                    <h3 className="home-description">Track the Markets - Monitor your Portfolio - Follow the News</h3>
                     <Link to="/markets"><button className="home-button">Get Started</button></Link>
                 </div>
 		        <ul className="floating-coins">
