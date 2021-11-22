@@ -6,7 +6,13 @@ function News() {
     const[news, setNews]=useState([])
 
     useEffect(() => {
-        fetch(`https://newsapi.org/v2/everything?qInTitle=crypto&sortBy=publishedAt&apiKey=06a4c8062a65436bb09e71c19d43424d`)
+        fetch("https://free-news.p.rapidapi.com/v1/search?q=crypto&lang=en", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "free-news.p.rapidapi.com",
+            "x-rapidapi-key": "c63074207fmshe8e45c0cb0aa50bp1e8ff6jsnaa049528fd0a"
+        }
+    })
     .then(response => response.json())
     .then((data) => setNews(data.articles))
     .catch(err => {
