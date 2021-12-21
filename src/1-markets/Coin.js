@@ -69,7 +69,7 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 <p className="coin-price" style={(coin.current_price.toString().match(/e/))? {fontSize : '1.5rem'} : null}><span className="coin-currency-sign" style={{fontSize : '1.5rem'}}>{sign}</span> {coin.current_price.toString().match(/e/) != null ? coin.current_price.toFixed(9): coin.current_price < 0.01 ? coin.current_price.toFixed(6) : coin.current_price > 0 ? coin.current_price.toLocaleString() : coin.current_price}</p>
             </div>
             <div id="coin-table-6">
-                <p className="coin-change" style={(coin.price_change_percentage_24h < 0)?{color:"red"}:{color:"rgb(0, 156, 0)"}}>{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                <p className="coin-change" style={(coin.price_change_percentage_24h < 0)?{color:"red"}:{color:"rgb(0, 156, 0)"}}>{coin.price_change_percentage_24h === null ? coin.price_change_percentage_24h : coin.price_change_percentage_24h.toFixed(2)}%</p>
             </div>
             <div id="coin-table-7">
                 <p className="coin-mCap"><span className="coin-currency-sign-other">{sign}</span> {currencyParser(coin.market_cap)}</p>

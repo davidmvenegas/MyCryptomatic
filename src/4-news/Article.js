@@ -4,6 +4,7 @@ import moment from 'moment';
 moment().format();
 
 function Article({art}) {
+    console.log(art);
     return (
         <div>
             <div className="article-container">
@@ -15,7 +16,7 @@ function Article({art}) {
                         <div className="article-text-box-2">
                         <p className="news-source">{art.link.split('/')[2]}</p>
                             <span className="article-bullet">&bull;</span>
-                            <p className="article-time">{moment(art.publishedAt).fromNow()}</p>
+                            <p className="article-time">{moment(art.published_date).fromNow()}</p>
                         </div>
                             <p className="article-decription">{art.summary.slice(0, 225)+"..."}</p>
                     </div>
