@@ -7,7 +7,6 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
     //give coin key of favorite and value depending on state
     const toggleFavorited = () => {
         if (watchlist.find((c) => c.id === coin.id===true)) {
-            console.log('delete from db')
             return (
                 fetch(`https://cryptomatic-app-json.herokuapp.com/cryptos/${coin.id}`, {
                     method: "DELETE",
@@ -16,7 +15,6 @@ function Coin({ coin, sign, onWatchlist, onDeleteWatchlist, watchlist }) {
                 .then(() => 
                 onDeleteWatchlist(coin))
                 )}else{
-                    console.log('new to db',)
                     return (
                         fetch('https://cryptomatic-app-json.herokuapp.com/cryptos', {
                             method: "POST",

@@ -41,7 +41,6 @@ function Track() {
         const coin = cryptos.find((c) => c.name===selectedCoin)
         coin.shares= parseFloat(shares)
         coin.entry= parseFloat(entry)
-        console.log(coin)
         e.preventDefault()
         fetch('https://cryptomatic-app-json.herokuapp.com/portfolio', {
             method: 'POST',

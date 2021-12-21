@@ -19,7 +19,6 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         handleDeletePortfolio(coin))
     }
     const dynamicPrice= cryptos.length > 1 ? cryptos.find((c) => c.id ===coin.id) : null
-    console.log(dynamicPrice)
 
 
     function handleFlip() {
@@ -30,9 +29,6 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         e.preventDefault()
         const added = coin.shares + edit
         const removed = coin.shares - edit
-        console.log(added)
-        console.log(removed)
-        console.log(type)
         type==='remove'?
         fetch(`https://cryptomatic-app-json.herokuapp.com/portfolio/${coin.id}`, {
             method: 'PATCH',
@@ -47,7 +43,6 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         .then(r => r.json())
         //adding item into my portfolio
         .then((c) => {
-            console.log('patch')
             handleUpdate(c)
         })
         .catch(err => {
@@ -66,7 +61,6 @@ function TrackItem({coin, handleDeletePortfolio, cryptos, handleUpdate}) {
         .then(r => r.json())
         //adding item into my portfolio
         .then((c) => {
-            console.log('patch')
             handleUpdate(c)
         })
         .catch(err => {

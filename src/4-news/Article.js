@@ -4,7 +4,6 @@ import moment from 'moment';
 moment().format();
 
 function Article({art}) {
-    console.log(art);
     return (
         <div>
             <div className="article-container">

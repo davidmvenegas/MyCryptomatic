@@ -55,8 +55,7 @@ function App() {
     }
   }).reverse()
 
-    let location = useLocation();
-    console.log(location);
+  let location = useLocation()
 
   return (
     <Fragment>

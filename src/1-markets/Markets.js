@@ -40,8 +40,6 @@ function Markets({onWatchlist, onDeleteWatchlist, watchlist}) {
     }, [])
 
     function handleSort (e) {
-        console.log(e.target.name)
-        console.log(sort)
         setSort(e.target.name)
     }
 
