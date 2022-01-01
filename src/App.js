@@ -13,7 +13,7 @@ import { useState, useEffect, Fragment } from "react/cjs/react.development";
 function App() {
   const[watchlist, setWatchlist] = useState([])
   const[sortby, setSortby] = useState('rank')
-  const[up, setUp]=useState(true)
+  const[up, setUp] = useState(true)
   
   useEffect(() => {
     fetch('https://cryptomatic-app-json.herokuapp.com/cryptos')
