@@ -14,3 +14,24 @@ body {
 ::-webkit-scrollbar { 
   display: none;
 }
+
+@media (max-width: 1450px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 1250px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 1125px) {
+  html {
+    font-size: 25%;
+  }
+}
+@media (max-width: 1125px) {
+  html {
+    font-size: 25%;
+  }
+}
